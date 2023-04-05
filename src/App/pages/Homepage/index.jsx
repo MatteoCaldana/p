@@ -36,19 +36,19 @@ const Homepage = () => {
       </Grid>
 
       <Typography component="p" style={{paddingBottom: 10}}>
-        I am a matematician and programmer. My main interests are high-performace computing (especially finite elements and CFD) and deep learning. This is reflected in the languages that I love: modern C++ for the elegance with which you can handle memory at a very fine level and Python which speed for code prototyping is under appreciated.
+        I am a mathematician and programmer. My main interests are high-performance computing (especially finite elements and CFD) and deep learning. This is reflected in the languages that I love: modern C++ for the elegance with which you can handle memory at a very fine level and Python, whose speed for code prototyping is underappreciated.
       </Typography>
 
       <Typography component="p" style={{paddingBottom: 10}}>
-        I have experience with coding large projects in other languages (Java, Javascript, MATLAB and SQL). Recently, I have been experimenting with Julia and I have great expectations for it.
+        I have experience with coding large projects in other languages (Java, JavaScript, MATLAB, and SQL). Recently, I have been experimenting with Julia and I have great expectations for it.
       </Typography>
 
       <Typography component="p" style={{paddingBottom: 10}}>
-        I have worked both as an employee (Junior Data Engineer) and as a free-lancer (Software Engineer).
+        I have worked both as an employee (Junior Data Engineer) and as a freelancer (Software Engineer).
       </Typography>
 
       <Typography component="p" style={{paddingBottom: 10}}>
-        If I am not in front of a PC you will find me in the mountains: running, climbing or skiing.
+        If I am not in front of a PC, you will find me in the mountains: running, climbing, or skiing.
       </Typography>
       
       <Button color="secondary" endIcon={<KeyboardArrowRightIcon />} onClick={() => navigate('/cv')}>
