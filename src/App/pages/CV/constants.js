@@ -1,6 +1,6 @@
 import ColorLink from "../../../components/ColorLink";
 
-const PUBBLICATION = [
+const PUBLICATION = [
   {
     authors: "Antonietti, P.F., Caldana, M. & Dede'",
     title: "Accelerating Algebraic Multigrid Methods via Artificial Neural Networks",
@@ -64,4 +64,4 @@ const INVITED = [
   },
 ];
 
-export { PUBBLICATION, TEACHING, INVITED };
+export { PUBLICATION, TEACHING, INVITED };

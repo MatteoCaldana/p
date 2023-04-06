@@ -4,15 +4,14 @@ import { Typography } from "@mui/material";
 import ColorLink from "../../../components/ColorLink";
 import Layout from "../../../components/Layout";
 import ScrollHashToElement from "../../../components/ScrollHashToElement";
-import { INVITED, PUBBLICATION, TEACHING } from "./constants"
+import { INVITED, PUBLICATION, TEACHING } from "./constants"
 
-// TODO: link siti -> webarchive (merate online, breva)
+// TODO: put skill summary?
 
 const URL_OLI_MATE = "https://www.merateonline.it/articolo.php?idd=44544&origine=1&t=Merate%3A+gli+studenti+del+liceo+Agnesi+al+terzo+posto+della+Coppa+Galileo.+Ora+le+olimpiadi";
 const URL_OLI_FIS = "https://www.merateonline.it/articolo.php?idd=46633&origine=1&t=Merate%3A+tre+cervelli+della+fisica+premiati+alle+Olimpiadi+di+matematica+con+oro+e+merito";
 const URL_ADS9378 = "https://www.merateonline.it/articolo.php?idd=44347&origine=1&t=Merate%2C+Agnesi%3A+una+%27nuova%27+orbita+studiata+da+5+alunni+li+qualifica+al+concorso+%27Fast%27";
 const URL_INTERNODES = "http://www1.mate.polimi.it/~forma/Didattica/ProgettiPacs/Caldana-Ischia18-19/report.pdf";
-const URL_ANMCPALS = "/works/robin-neumann-fsi";
 const URL_PAOLA = "https://antonietti.faculty.polimi.it/"
 const URL_LUCA = "http://www1.mate.polimi.it/~dede/"
 const URL_M3I = "https://www.mate.polimi.it/dottorato/index.php"
@@ -58,7 +57,7 @@ const WorkExperience = () =>
       title={<>Junior Data Engineer at <ColorLink to="https://www.quantyca.it/">Quantyca</ColorLink></>}
       period={"Sept. 2020 - Oct. 2021"}
     >
-      <li>Worked in team with agile practices to desing and implement web applications deployed as microservices (JavaScript, React, Java, Spring Boot, Docker, Kubernetes, AWS, GCP, Figma).</li>
+      <li>Worked in team with agile practices to design and implement web applications deployed as microservices (JavaScript, React, Java, Spring Boot, Docker, Kubernetes, AWS, GCP, Figma).</li>
       <li>Collaborated to the creation and deployment of data integration applications (MySQL, Vertica, Talend, Kafka, Elasticsearch, Spark).</li>
       <li>Main developer of a SaltStack application for detection and remediation of on-premise software malfunctions.</li>
       <li>Tutoring new employees on Springboot and React</li>
@@ -72,7 +71,7 @@ const Education = () =>
       period={<>Nov. 2021 - <i>Present</i></>}
     >
       <li><u>Supervisors</u>: prof. <ColorLink variant="small" to={URL_PAOLA}>Paola F. Antonietti</ColorLink>, prof. <ColorLink variant="small" to={URL_LUCA}>Luca Dede'</ColorLink></li>
-      <li>Author of 1 peer-reviewed pubblication on ML and numerical algorithms (C++, MPI, Python, Tensorflow, Pytorch, Pandas, Numpy). (<ColorLink variant="small" to="/cv/#Pubblications">see below</ColorLink>)</li>
+      <li>Author of 1 peer-reviewed publication on ML and numerical algorithms (C++, MPI, Python, Tensorflow, Pytorch, Pandas, Numpy). (<ColorLink variant="small" to="/cv/#Publications">see below</ColorLink>)</li>
       <li>Teaching assistant for more than 100 hours, including Master's courses on advanced programming. (<ColorLink variant="small" to="/cv/#Teaching">see below</ColorLink>)</li>
       <li>Invited to 3 talks at congress and scientific events. (<ColorLink variant="small" to="/cv/#Invited">see below</ColorLink>)</li>
     </ExperienceLayout>
@@ -86,7 +85,7 @@ const Education = () =>
         Projects:
         <ul style={{ marginTop: 0, paddingLeft: 20 }}>
           <li>Implementation of the INTERNODES method based on NURBS Isogeometric Analysis (<ColorLink variant="small" to={URL_INTERNODES}>link</ColorLink>)</li>
-          <li>Study of the stability and accuracy of a Robin-Neumann method for FSI (<ColorLink variant="small" to={URL_ANMCPALS}>link</ColorLink>)</li>
+          <li>Study of the stability and accuracy of a Robin-Neumann method for FSI</li>
         </ul>
       </small>
       */}
@@ -98,7 +97,7 @@ const Education = () =>
     />
     <br />
     <ExperienceLayout
-      title="High School Diploma at Liceo M. G. Agnesi (Merate) - 94/100"
+      title="High School Diploma at Liceo M. G. Agnesi (Merate)"
       period="Sept. 2009 - July 2014"
     >
       <li>Captain for 2 years of the math team, reached national level in 2011, 2012, 2014 (<ColorLink variant="small" to={URL_OLI_MATE}>link</ColorLink>)</li>
@@ -143,28 +142,20 @@ const Teaching = () =>
     </thead>
     {TEACHING.map(x =>
       <tr>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.ay}
-        </td>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.institution}
-        </td>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.programme}
-        </td>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.course}
-        </td>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.notes}
-        </td>
+        {
+          ["ay", "institution", "programme", "course", "notes"].map(field => 
+            <td style={{ verticalAlign: "top", padding: 10 }}>
+              {x[field]}
+            </td>
+          )
+        }
       </tr>
     )}
   </table>
 
-const Pubblications = () =>
+const Publications = () =>
   <table>
-    {PUBBLICATION.map((x, i) =>
+    {PUBLICATION.map((x, i) =>
       <tr>
         <td style={{ verticalAlign: "top", padding: 10 }}>
           [{i + 1}]
@@ -187,21 +178,13 @@ const Invited = () =>
     </thead>
     {INVITED.map(x =>
       <tr>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.dates}
-        </td>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.congress}
-        </td>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.venue}
-        </td>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.minisymposium}
-        </td>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.title}
-        </td>
+        {
+          ["dates", "congress", "venue", "minisymposium", "title"].map(field => 
+            <td style={{ verticalAlign: "top", padding: 10 }}>
+              {x[field]}
+            </td>
+          )
+        }
       </tr>
     )}
   </table>
@@ -218,8 +201,8 @@ const CV = () => {
         <Education />
       </SectionLayout>
       <br />
-      <SectionLayout title="Pubblications">
-        <Pubblications />
+      <SectionLayout title="Publications">
+        <Publications />
       </SectionLayout>
       <SectionLayout title="Teaching">
         <Teaching />
