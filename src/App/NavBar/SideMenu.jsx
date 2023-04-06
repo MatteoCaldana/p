@@ -36,7 +36,7 @@ const SideMenu = () => {
           </ListItem>
           <ListItem>
             <TypographyLink to="/projects" onClick={closeDrawer}>
-              Personal Projects
+              Projects
             </TypographyLink>
           </ListItem>
           <ListItem>

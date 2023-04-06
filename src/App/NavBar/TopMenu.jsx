@@ -13,7 +13,7 @@ const TopMenu = () => {
       </Grid>
       <Grid item>
         <TypographyLink to="/projects">
-          Personal Projects
+          Projects
         </TypographyLink>
       </Grid>
       <Grid item>

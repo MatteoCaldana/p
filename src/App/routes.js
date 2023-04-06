@@ -19,7 +19,7 @@ const appRoutes = [
     id: 'projects',
     path: 'projects',
     component: Projects,
-    title: 'Personal Projects',
+    title: 'Projects',
   },
   {
     id: 'no-match',

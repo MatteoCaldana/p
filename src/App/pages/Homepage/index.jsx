@@ -36,11 +36,11 @@ const Homepage = () => {
       </Grid>
 
       <Typography component="p" style={{paddingBottom: 10}}>
-        I am a mathematician and programmer. My main interests are high-performance computing (especially finite elements and CFD) and deep learning. This is reflected in the languages that I love: modern C++ for the elegance with which you can handle memory at a very fine level and Python, whose speed for code prototyping is underappreciated.
+        I am a mathematician and programmer. My main interests are high-performance computing (especially the finite element method) and machine learning. It reflects in the languages I love: C++ for the zero-overhead principle and Python, which enables you to write code faster than in any other language.
       </Typography>
 
       <Typography component="p" style={{paddingBottom: 10}}>
-        I have experience with coding large projects in other languages (Java, JavaScript, MATLAB, and SQL). Recently, I have been experimenting with Julia and I have great expectations for it.
+        I also had the opportunity to develop code for large projects in other languages: Java, JavaScript, MATLAB, and SQL. Recently, I have been experimenting with Julia, and I have great expectations for it.
       </Typography>
 
       <Typography component="p" style={{paddingBottom: 10}}>
@@ -52,7 +52,7 @@ const Homepage = () => {
       </Typography>
       
       <Button color="secondary" endIcon={<KeyboardArrowRightIcon />} onClick={() => navigate('/cv')}>
-        More about my skills and professional experience
+        Read my full CV!
       </Button>
 
       <Typography variant="h6">

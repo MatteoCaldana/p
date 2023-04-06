@@ -42,7 +42,7 @@ const App = () => {
         <Grid container justifyContent="center" alignItems="center">
           <Grid item xs={11}>
             <Grid container justifyContent="space-between" alignItems="center">
-              <Grid item style={{fontSize: 12 }}>Last update: 2023-04-05</Grid>
+              <Grid item style={{fontSize: 12 }}>Last update: 2023-04-06</Grid>
               <TypographyLink component={'span'} to={`mailto:${EMAIL}`} style={{fontSize: 12 }}>
                 Contact me!
               </TypographyLink>
