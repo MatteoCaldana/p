@@ -8,9 +8,23 @@ import { INVITED, PUBLICATION, TEACHING } from "./constants"
 
 // TODO: put skill summary?
 
-const URL_OLI_MATE = "https://www.merateonline.it/articolo.php?idd=44544&origine=1&t=Merate%3A+gli+studenti+del+liceo+Agnesi+al+terzo+posto+della+Coppa+Galileo.+Ora+le+olimpiadi";
+const URL_OLI_MATE_2012 = "https://www.liceoagnesi.edu.it/articolo/olimpiadi-di-matematica-e-fisica"
+// eslint-disable-next-line
+const URL_OLI_MATE_2012_BACKUP = "https://web.archive.org/web/20230406191322/https://www.liceoagnesi.edu.it/articolo/olimpiadi-di-matematica-e-fisica"
+const URL_OLI_MATE_2014 = "https://www.merateonline.it/articolo.php?idd=44544&origine=1&t=Merate%3A+gli+studenti+del+liceo+Agnesi+al+terzo+posto+della+Coppa+Galileo.+Ora+le+olimpiadi";
+// eslint-disable-next-line
+const URL_OLI_MATE_2014_BACKUP = "http://web.archive.org/web/20230406185840/https://www.merateonline.it/articolo.php?idd=44544&origine=1&t=Merate%3A+gli+studenti+del+liceo+Agnesi+al+terzo+posto+della+Coppa+Galileo.+Ora+le+olimpiadi"
 const URL_OLI_FIS = "https://www.merateonline.it/articolo.php?idd=46633&origine=1&t=Merate%3A+tre+cervelli+della+fisica+premiati+alle+Olimpiadi+di+matematica+con+oro+e+merito";
+// eslint-disable-next-line
+const URL_OLI_FIS_BACKUP = "http://web.archive.org/web/20230406190448/https://www.merateonline.it/articolo.php?idd=46633&origine=1&t=Merate%3A+tre+cervelli+della+fisica+premiati+alle+Olimpiadi+di+matematica+con+oro+e+merito";
+// eslint-disable-next-line
 const URL_ADS9378 = "https://www.merateonline.it/articolo.php?idd=44347&origine=1&t=Merate%2C+Agnesi%3A+una+%27nuova%27+orbita+studiata+da+5+alunni+li+qualifica+al+concorso+%27Fast%27";
+// eslint-disable-next-line
+const URL_ADS9378_BACKUP = "https://web.archive.org/web/20230406190328/https://www.merateonline.it/articolo.php?idd=44347&origine=1&t=Merate%2C+Agnesi%3A+una+%27nuova%27+orbita+studiata+da+5+alunni+li+qualifica+al+concorso+%27Fast%27"
+const URL_ADS9378_PDF = "http://oldsite.fast.mi.it/gs2014/GioScie_Finalisti.pdf"
+// eslint-disable-next-line
+const URL_ADS9378_PDF_BACKUP = "https://web.archive.org/web/20230406190910/http://oldsite.fast.mi.it/gs2014/GioScie_Finalisti.pdf"
+// eslint-disable-next-line
 const URL_INTERNODES = "http://www1.mate.polimi.it/~forma/Didattica/ProgettiPacs/Caldana-Ischia18-19/report.pdf";
 const URL_PAOLA = "https://antonietti.faculty.polimi.it/"
 const URL_LUCA = "http://www1.mate.polimi.it/~dede/"
@@ -46,7 +60,7 @@ const WorkExperience = () =>
       title={<>Freelance Software Engineer at <ColorLink to="https://toolspole.com/">ToolsPole</ColorLink></>}
       period={"Nov. 2020 - Oct. 2021"}
     >
-      <li>Developer of Breva, a software for the automation of yacht engineering workflows (C++, Qt, VTK).</li>
+      <li>Developer of Breva, a software for the automation of yacht engineering workflows (C++, CMake, Qt, VTK).</li>
       <li>Contributed to the development of the UI and algorithms for multivariate interpolation, data visualization and wing profile optimization.</li>
       <li>Profiled and optimized C++ code for scientific computing and 3D renders.</li>
     </ExperienceLayout>
@@ -100,9 +114,9 @@ const Education = () =>
       title="High School Diploma at Liceo M. G. Agnesi (Merate)"
       period="Sept. 2009 - July 2014"
     >
-      <li>Captain for 2 years of the math team, reached national level in 2011, 2012, 2014 (<ColorLink variant="small" to={URL_OLI_MATE}>link</ColorLink>)</li>
-      <li>Reached national level at physics competition in 2014 (<ColorLink variant="small" to={URL_OLI_FIS}>link</ColorLink>) </li>
-      <li>Worked in team to study the orbit of a double star, project presented at a national contest in 2014 (<ColorLink variant="small" to={URL_ADS9378}>link</ColorLink>)</li>
+      <li>Captain for two years of the mathematical olympiad team, reached national level in 2011, <ColorLink variant="small" to={URL_OLI_MATE_2012}>2012</ColorLink>, <ColorLink variant="small" to={URL_OLI_MATE_2014}>2014</ColorLink></li>
+      <li>Reached national level at physics olympiad in 2014 (<ColorLink variant="small" to={URL_OLI_FIS}>link</ColorLink>) </li>
+      <li>Worked in team to study the orbit of a double star, project reached national contest "<ColorLink variant="small" to={URL_ADS9378_PDF}>I giovani e le scienze - FAST</ColorLink>" in 2014</li>
     </ExperienceLayout>
   </React.Fragment>
 
@@ -131,62 +145,51 @@ const Education = () =>
 //     </ArticleLayout>
 //   </React.Fragment>
 
-const Teaching = () =>
-  <table>
-    <thead>
-      {["Period", "Institution", "Programme", "Course", "Notes"].map(x =>
-        <td style={{ verticalAlign: "top", padding: 10, fontWeight: "bold" }}>
-          {x}
-        </td>
-      )}
-    </thead>
-    {TEACHING.map(x =>
-      <tr>
-        {
-          ["ay", "institution", "programme", "course", "notes"].map(field => 
-            <td style={{ verticalAlign: "top", padding: 10 }}>
-              {x[field]}
+const makeTable = (table) => {
+  return () =>
+    <table>
+      <thead>
+        <tr>
+          {table.headers.map(x =>
+            <td key={x} style={{ verticalAlign: "top", padding: 10, fontWeight: "bold" }}>
+              {x}
             </td>
-          )
-        }
-      </tr>
-    )}
-  </table>
+          )}
+        </tr>
+      </thead>
+      <tbody>
+        {table.data.map((x, i) =>
+          <tr key={i}>
+            {
+              table.fields.map((field, j) =>
+                <td key={`${i}-${j}`} style={{ verticalAlign: "top", padding: 10 }}>
+                  {x[field]}
+                </td>
+              )
+            }
+          </tr>
+        )}
+      </tbody>
+    </table>
+}
+
+const Teaching = makeTable(TEACHING);
+const Invited = makeTable(INVITED);
 
 const Publications = () =>
   <table>
-    {PUBLICATION.map((x, i) =>
-      <tr>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          [{i + 1}]
-        </td>
-        <td style={{ verticalAlign: "top", padding: 10 }}>
-          {x.authors}. {x.title}. In: <i>{x.where}</i> DOI: <ColorLink to={x.doi}>{x.doi.slice(16)}.</ColorLink>
-        </td>
-      </tr>
-    )}
-  </table>
-
-const Invited = () =>
-  <table>
-    <thead>
-      {["Dates", "Congress", "Venue", "Minisymposium", "Title"].map(x =>
-        <td style={{ verticalAlign: "top", padding: 10, fontWeight: "bold" }}>
-          {x}
-        </td>
+    <tbody>
+      {PUBLICATION.map((x, i) =>
+        <tr key={i}>
+          <td style={{ verticalAlign: "top", padding: 10 }}>
+            [{i + 1}]
+          </td>
+          <td style={{ verticalAlign: "top", padding: 10 }}>
+            {x.authors}. {x.title}. In: <i>{x.where}</i> DOI: <ColorLink to={x.doi}>{x.doi.slice(16)}.</ColorLink>
+          </td>
+        </tr>
       )}
-    </thead>
-    {INVITED.map(x =>
-      <tr>
-        {
-          ["dates", "congress", "venue", "minisymposium", "title"].map(field => 
-            <td style={{ verticalAlign: "top", padding: 10 }}>
-              {x[field]}
-            </td>
-          )
-        }
-      </tr>
-    )}
+    </tbody>
   </table>
 
 const CV = () => {

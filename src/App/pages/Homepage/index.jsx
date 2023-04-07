@@ -36,7 +36,7 @@ const Homepage = () => {
       </Grid>
 
       <Typography component="p" style={{paddingBottom: 10}}>
-        I am a mathematician and programmer. My main interests are high-performance computing (especially the finite element method) and machine learning. It reflects in the languages I love: C++ for the zero-overhead principle and Python, which enables you to write code faster than in any other language.
+        I am a PhD student in applied mathematics with a passion for programming. My main interests are high-performance computing (especially the finite element method) and machine learning. It reflects in the languages I love: C++ for the zero-overhead principle and Python, which enables you to write code faster than in any other language.
       </Typography>
 
       <Typography component="p" style={{paddingBottom: 10}}>

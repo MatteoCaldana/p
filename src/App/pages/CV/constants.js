@@ -9,7 +9,10 @@ const PUBLICATION = [
   }
 ];
 
-const TEACHING = [
+const TEACHING = {
+  headers: ["Period", "Institution", "Programme", "Course", "Notes"],
+  fields: ["ay", "institution", "programme", "course", "notes"],
+  data: [
   {
     ay: "Spring 2023",
     institution: "Politecnico di Milano",
@@ -38,9 +41,12 @@ const TEACHING = [
     course: "Introduction to numerical methods (ITA)",
     notes: "Conducting MATLAB laboratories",
   }
-];
+]};
 
-const INVITED = [
+const INVITED = {
+  headers: ["Dates", "Congress", "Venue", "Minisymposium", "Title"],
+  fields: ["dates", "congress", "venue", "minisymposium", "title"],
+  data: [
   {
     dates: "Sept. 26-30, 2022",
     congress: "SIAM Conference on Mathematics of Data Science, MDS22",
@@ -53,7 +59,7 @@ const INVITED = [
     congress: "International Multigrid Conference 2022, IMG2022",
     venue: "Lugano",
     title: "Accelerating Algebraic Multigrid Methods via Artificial Neural Networks",
-    minisymposium: "Learning Algorithms, Domain Decomposition Methods, and Applications"
+    minisymposium: "Combining the domain decomposition and the multilevel methods with machine learning approaches"
   },
   {
     dates: "July 25-29, 2022",
@@ -62,6 +68,7 @@ const INVITED = [
     title: "Accelerating Algebraic Multigrid Methods via Artificial Neural Networks",
     minisymposium: "Learning Algorithms, Domain Decomposition Methods, and Applications"
   },
-];
+]
+};
 
 export { PUBLICATION, TEACHING, INVITED };
