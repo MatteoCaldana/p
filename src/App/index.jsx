@@ -72,7 +72,7 @@ const App = () => {
             {
               projects.filter(p => p.component).map(p =>
                 <Route key={`projects-${p.path}`} path={`/projects/${p.path}`}
-                  element={<AbstractProject project={p}/>}
+                  element={<AbstractProject project={p} />}
                 />
               )
             }

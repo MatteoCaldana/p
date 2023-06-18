@@ -75,7 +75,7 @@ const Projects = () => {
         {
           projects
             .filter(w => selectedProjectTag.length ? intersection(selectedProjectTag, w.tags).length : true)
-            .map(w => <ProjectGridItem key={w.path} project={w}/>)
+            .map(w => <ProjectGridItem key={w.path} project={w} />)
         }
       </Grid>
     </Layout>

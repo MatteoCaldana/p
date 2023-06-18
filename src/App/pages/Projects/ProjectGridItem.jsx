@@ -17,7 +17,7 @@ const BoxRouting = (props) => {
       <NavLink to={`/projects/${props.to}`} style={{ textDecoration: 'none', color: 'unset' }}>
         {props.children}
       </NavLink>
-    ); 
+    );
   }
 }
 
@@ -35,13 +35,13 @@ const ProjectGridItem = ({ project }) => {
           },
         }}
       >
-        <Paper elevation={3} style={{padding: 10}}>
-          <img width={128} height={128} 
-            style={{marginLeft: 'auto', marginRight: 'auto', display: 'block'}} 
-            alt={`img-${project.path}`} src={project.largeImg} 
+        <Paper elevation={3} style={{ padding: 10 }}>
+          <img width={128} height={128}
+            style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block' }}
+            alt={`img-${project.path}`} src={project.largeImg}
           />
           <Typography align="center" variant="body1">{project.title}</Typography>
-          <Typography align="center" color="textSecondary" style={{fontSize: 10}}>
+          <Typography align="center" color="textSecondary" style={{ fontSize: 10 }}>
             {project.abstract.slice(0, CUTOFF) + (project.abstract.length > CUTOFF ? "..." : "")}
           </Typography>
         </Paper>

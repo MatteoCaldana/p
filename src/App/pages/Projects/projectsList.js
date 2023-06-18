@@ -1,7 +1,7 @@
 import Dummy from "./projects/Dummy";
 
 const projects = [
-    { 
+    {
         path: "accelerating-amg",
         title: "Accelerating Algebraic Multigrid Methods via Artificial Neural Networks",
         subtitle: "",
@@ -9,9 +9,9 @@ const projects = [
         smallImg: "",
         when: "November 2021",
         component: null,
-        tags: ["FEM", "C++", "Python", "Tensorflow", "Machine Learning"] 
+        tags: ["FEM", "C++", "Python", "Tensorflow", "Machine Learning"]
     },
-    { 
+    {
         path: "internodes",
         title: "INTERNODES Method Based on NURBS Isogeometric Analysis",
         subtitle: "",
@@ -19,9 +19,9 @@ const projects = [
         smallImg: "",
         when: "September 2019",
         component: null,
-        tags: ["FEM", "IGA", "NURBS", "C++"] 
+        tags: ["FEM", "IGA", "NURBS", "C++"]
     },
-    { 
+    {
         path: "robin-neumann-fsi",
         title: "Stability and accuracy of a Robin-Neumann method for FSI",
         subtitle: "",
@@ -29,9 +29,9 @@ const projects = [
         smallImg: "",
         when: "July 2019",
         component: null,
-        tags: ["FEM", "C++", "CFD", "FSI"] 
+        tags: ["FEM", "C++", "CFD", "FSI"]
     },
-    { 
+    {
         path: "scraping",
         title: "",
         subtitle: "",
@@ -40,17 +40,17 @@ const projects = [
         largeImg: "",
         when: "",
         component: null,
-        tags: ["Python", "SiteScraping"] 
+        tags: ["Python", "SiteScraping"]
     },
-    { 
+    {
         path: "watext",
         title: "WaText",
         subtitle: "A Small Dashboard to Analyze WhatsApp Data",
         abstract: "A small project to analyze WhatsApp conversations started while attendig the Fall 2018 APC course. Originally written in C++, it was soon refactored in Python and later converted into this JS dashboard.",
         smallImg: "",
         when: "September 2018",
-        tags: ["JavaScript", "Data Analysis"] 
-        
+        tags: ["JavaScript", "Data Analysis"]
+
     },
     {
         path: "https://github.com/pacs-course/pacs-examples/commits?author=MatteoCaldana",
@@ -59,7 +59,7 @@ const projects = [
         abstract: "My contributions in the repository of the course in Advanced Programming for Scientific Computing",
         smallImg: "",
         when: "",
-        tags: ["C++", "Parallel Computing"] 
+        tags: ["C++", "Parallel Computing"]
     },
     {
         path: "dummy",
@@ -69,7 +69,7 @@ const projects = [
         smallImg: "",
         component: Dummy,
         when: "dummy when",
-        tags: [] 
+        tags: []
     }
 ];
 
