@@ -51,7 +51,7 @@ const Homepage = () => {
         If I am not in front of a PC, you will find me in the mountains: running, climbing, or skiing.
       </Typography>
 
-      <Button color="secondary" endIcon={<KeyboardArrowRightIcon />} onClick={() => navigate('/cv')}>
+      <Button variant="outlined" color="secondary" endIcon={<KeyboardArrowRightIcon />} onClick={() => navigate('/cv')}>
         Read my full CV!
       </Button>
 

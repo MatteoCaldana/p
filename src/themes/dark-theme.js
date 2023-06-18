@@ -4,6 +4,9 @@ const dark = {
         primary: {
             main: '#101010',
         },
+        secondary: {
+            main: '#F50057',
+        },
     },
 };
 

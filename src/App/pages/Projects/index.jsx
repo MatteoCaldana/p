@@ -43,7 +43,7 @@ const Projects = () => {
   return (
     <Layout style={{ maxWidth: 1000, margin: "auto" }}>
       <Typography variant="h4" align="center">
-        A collection my public projects
+        A collection my personal projects
       </Typography>
       <FormControl sx={{ m: 1, width: 300 }}>
         <InputLabel id="demo-multiple-checkbox-label">Filter by Tag</InputLabel>

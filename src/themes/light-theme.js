@@ -8,6 +8,9 @@ const light = {
         primary: {
             main: '#dbcab4',
         },
+        secondary: {
+            main: '#F50057',
+        },
         common: {
             white: '#dbcab4'
         }

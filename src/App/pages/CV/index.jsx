@@ -81,12 +81,12 @@ const WorkExperience = () =>
 const Education = () =>
   <React.Fragment>
     <ExperienceLayout
-      title={<>PhD in <ColorLink variant="small" to={URL_M3I}>Mathematical Models and Methods in Engineering</ColorLink> at Politecnico di Milano</>}
+      title={<>PhD in Mathematical Models and Methods in Engineering at Politecnico di Milano</>}
       period={<>Nov. 2021 - <i>Present</i></>}
     >
       <li><u>Supervisors</u>: prof. <ColorLink variant="small" to={URL_PAOLA}>Paola F. Antonietti</ColorLink>, prof. <ColorLink variant="small" to={URL_LUCA}>Luca Dede'</ColorLink></li>
       <li>Author of 1 peer-reviewed publication on ML and numerical algorithms (C++, MPI, Python, Tensorflow, Pytorch, Pandas, Numpy). (<ColorLink variant="small" to="/cv/#Publications">see below</ColorLink>)</li>
-      <li>Teaching assistant for more than 100 hours, including Master's courses on advanced programming. (<ColorLink variant="small" to="/cv/#Teaching">see below</ColorLink>)</li>
+      <li>Teaching assistant for more than 100 hours, including Master's courses on advanced programming (<u>code publicly available</u>). (<ColorLink variant="small" to="/cv/#Teaching">see below</ColorLink>)</li>
       <li>Invited to 3 talks at congress and scientific events. (<ColorLink variant="small" to="/cv/#Invited">see below</ColorLink>)</li>
     </ExperienceLayout>
     <br />
