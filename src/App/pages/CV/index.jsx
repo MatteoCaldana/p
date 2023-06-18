@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import ColorLink from "../../../components/ColorLink";
 import Layout from "../../../components/Layout";
 import ScrollHashToElement from "../../../components/ScrollHashToElement";
-import { INVITED, PUBLICATION, TEACHING } from "./constants"
+import { TALKS, PUBLICATION, TEACHING } from "./constants"
 
 // TODO: put skill summary?
 
@@ -132,7 +132,7 @@ const Education = () =>
 //       </ul>
 //     </ArticleLayout>
 //     <ArticleLayout shortDesc="Data Science">
-//       Matlab, Python, Numpy, PyPlot, SciPy, Pandas, Tensorflow, Keras
+//       Matlab, Python, Numpy, PyPlot, SciPy, Pandas, PyTorch, Tensorflow, Keras
 //     </ArticleLayout>
 //     <ArticleLayout shortDesc="Data Engineering">
 //       SQL, Vertica, Talend, Apache Kafka, Elasticsearch, SaltStack, Apache Spark
@@ -141,7 +141,7 @@ const Education = () =>
 //       JavaScript, React, Java, Spring Boot, Docker, Kubernetes, GCP, AWS
 //     </ArticleLayout>
 //     <ArticleLayout shortDesc="Software Engineering">
-//       C, C++, MPI, Qt, VTK, CMake, Linux admin
+//       C, C++, MPI, OpenMP, Qt, VTK, CMake, Linux admin
 //     </ArticleLayout>
 //   </React.Fragment>
 
@@ -174,7 +174,7 @@ const makeTable = (table) => {
 }
 
 const Teaching = makeTable(TEACHING);
-const Invited = makeTable(INVITED);
+const Talks = makeTable(TALKS);
 
 const Publications = () =>
   <table>
@@ -210,8 +210,9 @@ const CV = () => {
       <SectionLayout title="Teaching">
         <Teaching />
       </SectionLayout>
-      <SectionLayout title="Invited talks at congress and scientific events">
-        <Invited />
+      <SectionLayout title="Invited and contributed talks at congress and scientific events">
+        <Talks />
+        <>(*): contributed talk</>
       </SectionLayout>
       {/*
       <Skills />

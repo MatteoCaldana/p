@@ -9,6 +9,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import { Grid } from "@mui/material";
 
 import appRoutes from "./routes";
+import projects from "./pages/Projects/projectsList";
+import AbstractProject from "./pages/Projects/projects/AbstractProject";
 import Homepage from './pages/Homepage';
 import NavBar from "./NavBar";
 import light from "../themes/light-theme";
@@ -35,28 +37,27 @@ const App = () => {
           <NavBar isMobile={!matches}
             isThemeLight={isThemeLight} setThemeLight={setThemeLight}
           />
-          <div style={{height: 45}}></div>
+          <div style={{ height: 45 }}></div>
           <Outlet />
         </div>
-        <div id="footer" style={{background: currTheme.palette.primary.light }}>
-        <Grid container justifyContent="center" alignItems="center">
-          <Grid item xs={11}>
-            <Grid container justifyContent="space-between" alignItems="center">
-              <Grid item style={{fontSize: 12 }}>Last update: 2023-04-06</Grid>
-              <TypographyLink component={'span'} to={`mailto:${EMAIL}`} style={{fontSize: 12 }}>
-                Contact me!
-              </TypographyLink>
-              <TypographyLink component={'span'} to={`https://github.com/${GITHUB}`}>
-                <Grid container alignItems="center" style={{fontSize: 14 }}>
-                  <GitHubIcon fontSize="inherit" />
-                  <div style={{paddingLeft: 5}}>Source</div>
-                </Grid>
-              </TypographyLink>
+        <div id="footer" style={{ background: currTheme.palette.primary.light }}>
+          <Grid container justifyContent="center" alignItems="center">
+            <Grid item xs={11}>
+              <Grid container justifyContent="space-between" alignItems="center">
+                <Grid item style={{ fontSize: 12 }}>Last update: 2023-06-18</Grid>
+                <TypographyLink component={'span'} to={`mailto:${EMAIL}`} style={{ fontSize: 12 }}>
+                  Contact me!
+                </TypographyLink>
+                <TypographyLink component={'span'} to={`https://github.com/${GITHUB}`}>
+                  <Grid container alignItems="center" style={{ fontSize: 14 }}>
+                    <GitHubIcon fontSize="inherit" />
+                    <div style={{ paddingLeft: 5 }}>Source</div>
+                  </Grid>
+                </TypographyLink>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>  
         </div>
-
       </div>
     );
   }
@@ -68,6 +69,13 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Homepage />} />
+            {
+              projects.filter(p => p.component).map(p =>
+                <Route key={`projects-${p.path}`} path={`/projects/${p.path}`}
+                  element={<AbstractProject project={p}/>}
+                />
+              )
+            }
             {
               appRoutes.map((route) =>
                 <Route key={route.id} path={route.path}
