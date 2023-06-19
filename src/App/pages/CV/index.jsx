@@ -28,7 +28,7 @@ const URL_ADS9378_PDF_BACKUP = "https://web.archive.org/web/20230406190910/http:
 const URL_INTERNODES = "http://www1.mate.polimi.it/~forma/Didattica/ProgettiPacs/Caldana-Ischia18-19/report.pdf";
 const URL_PAOLA = "https://antonietti.faculty.polimi.it/"
 const URL_LUCA = "http://www1.mate.polimi.it/~dede/"
-const URL_M3I = "https://www.mate.polimi.it/dottorato/index.php"
+//const URL_M3I = "https://www.mate.polimi.it/dottorato/index.php"
 
 const SectionLayout = (props) =>
   <section id={props.title.split(' ')[0]}>

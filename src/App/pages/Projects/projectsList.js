@@ -1,4 +1,6 @@
-import Dummy from "./projects/Dummy";
+import ColorLink from "../../../components/ColorLink";
+import Maps from "./projects/Maps";
+import WaText from "./projects/WaText";
 
 const projects = [
     // {
@@ -94,17 +96,22 @@ const projects = [
         when: "2020",
         tags: ["C++", "Python"]
     },
-    // TODO: add watext dashboard, add the gps track analyzer
-    // {
-    //     path: "dummy",
-    //     title: "Dummy Title",
-    //     subtitle: "dummy subtitle",
-    //     abstract: "dummy abstract",
-    //     smallImg: "",
-    //     component: Dummy,
-    //     when: "dummy when",
-    //     tags: []
-    // }
+    {
+        path: "watext",
+        title: "WhastApp Analyzer Dashboard",
+        abstract: <>A dashboard to analyze WhatsApp conversations that is a porting to JS of the <ColorLink to={"https://github.com/MatteoCaldana/whatsapp-analyser"}>original Python script</ColorLink>.</>,
+        component: WaText,
+        when: "2022",
+        tags: ["Javascript", "Data Analysis"]
+    },
+    {
+        path: "maps",
+        title: "Trekking Maps & GPX Visualizer",
+        abstract: "A very small app to choose your own tiling provider and visualize GPX track. Every time I go hiking, the best information is on a different site/app depending on the trail I am following. In this way I have all the information I need in one place and, after the hike, I can analyze the GPX data exported from my iPhone.",
+        component: Maps,
+        when: "2023",
+        tags: ["Javascript", "Data Analysis"]
+    }
 ];
 
 export default projects;

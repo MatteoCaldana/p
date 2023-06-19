@@ -1,20 +1,17 @@
 import React from "react";
 
 import Typography from "@mui/material/Typography";
+import Layout from "../../../../components/Layout";
 
 const AbstractProject = ({ project }) => {
   return (
-    <React.Fragment>
+    <Layout style={{ maxWidth: 1000, margin: "auto" }}>
       <Typography variant="h4">
         {project.title}
       </Typography>
       <Typography variant="h6" color="textSecondary">
         {project.subtitle}
       </Typography>
-      <img width={256} height={256}
-        style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block' }}
-        alt={`img-${project.path}`} src={project.largeImg}
-      />
       <Typography variant="body1">
         <b>Date:</b> {project.when}
       </Typography>
@@ -22,7 +19,7 @@ const AbstractProject = ({ project }) => {
         <b>Abstract:</b> {project.abstract}
       </Typography>
       {project.component ? <project.component /> : null}
-    </React.Fragment>
+    </Layout>
   );
 }
 
