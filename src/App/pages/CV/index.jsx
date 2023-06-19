@@ -71,7 +71,8 @@ const WorkExperience = () =>
       title={<>Junior Data Engineer at <ColorLink to="https://www.quantyca.it/">Quantyca</ColorLink></>}
       period={"Sept. 2020 - Oct. 2021"}
     >
-      <li>Worked in team with agile practices to design and implement web applications deployed as microservices (JavaScript, React, Java, Spring Boot, Docker, Kubernetes, AWS, GCP, Figma).</li>
+      <li>Tested the viability of automating manual tasks through deep learning.</li>
+      <li>Worked with Agile practices to design and implement web applications deployed as microservices (JavaScript, React, Java, Spring Boot, Docker, Kubernetes, AWS, GCP, Figma).</li>
       <li>Collaborated to the creation and deployment of data integration applications (MySQL, Vertica, Talend, Kafka, Elasticsearch, Spark).</li>
       <li>Main developer of a SaltStack application for detection and remediation of on-premise software malfunctions.</li>
       <li>Tutoring new employees on Springboot and React</li>
@@ -94,15 +95,6 @@ const Education = () =>
       title="Master of Science in Mathematical Engineering at Politecnico di Milano - 110/110 Cum Laude"
       period="March 2018 - June 2020"
     >
-      {/* TODO: show this?
-      <small>
-        Projects:
-        <ul style={{ marginTop: 0, paddingLeft: 20 }}>
-          <li>Implementation of the INTERNODES method based on NURBS Isogeometric Analysis (<ColorLink variant="small" to={URL_INTERNODES}>link</ColorLink>)</li>
-          <li>Study of the stability and accuracy of a Robin-Neumann method for FSI</li>
-        </ul>
-      </small>
-      */}
     </ExperienceLayout>
     <br />
     <ExperienceLayout

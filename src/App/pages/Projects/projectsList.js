@@ -61,7 +61,7 @@ const projects = [
     },
     {
         path: "https://github.com/MatteoCaldana/cardmarket-scraper",
-        title: "Cardmarker scraper",
+        title: "Cardmarket scraper",
         abstract: "A Python package to scrape and analyze data from a website that sells collectables.  Original code from 2020, I am doing a bit of refactoring and packing it in a repo. The main work left to do is for data analysis.",
         when: "2020",
         tags: ["Python", "Data Analysis", "Web Scraping"]
