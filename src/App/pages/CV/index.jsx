@@ -71,8 +71,8 @@ const WorkExperience = () =>
       title={<>Junior Data Engineer at <ColorLink to="https://www.quantyca.it/">Quantyca</ColorLink></>}
       period={"Sept. 2020 - Oct. 2021"}
     >
-      <li>Tested the viability of automating manual tasks through deep learning.</li>
-      <li>Worked with Agile practices to design and implement web applications deployed as microservices (JavaScript, React, Java, Spring Boot, Docker, Kubernetes, AWS, GCP, Figma).</li>
+      <li>Contributed to PoC aimed at probing the viability of automating manual tasks through deep learning.</li>
+      <li>Worked with Agile practices to design and implement web applications deployed as microservices on cloud platforms (JavaScript, React, Java, Spring Boot, Docker, Kubernetes, AWS, GCP, Figma).</li>
       <li>Collaborated to the creation and deployment of data integration applications (MySQL, Vertica, Talend, Kafka, Elasticsearch, Spark).</li>
       <li>Main developer of a SaltStack application for detection and remediation of on-premise software malfunctions.</li>
       <li>Tutoring new employees on Springboot and React</li>

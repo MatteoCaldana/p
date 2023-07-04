@@ -13,13 +13,13 @@ const TEACHING = {
   headers: ["Period", "Institution", "Programme", "Course", "Notes"],
   fields: ["ay", "institution", "programme", "course", "notes"],
   data: [
-    {
-      ay: "Fall 2023",
-      institution: "Politecnico di Milano",
-      programme: "M.S. in High Performance Computing Engineering",
-      course: "Advanced methods for scientific computing (ENG)",
-      notes: <>TBD</>,
-    },
+    // {
+    //   ay: "Fall 2023",
+    //   institution: "Politecnico di Milano",
+    //   programme: "M.S. in High Performance Computing Engineering",
+    //   course: "Advanced methods for scientific computing (ENG)",
+    //   notes: <>TBD</>,
+    // },
     {
       ay: "Spring 2023",
       institution: "Politecnico di Milano",
@@ -56,6 +56,27 @@ const TALKS = {
   fields: ["dates", "congress", "venue", "minisymposium", "title"],
   data: [
     {
+      dates: "August 28 - September 1, 2023",
+      congress: "SIMAI 2023",
+      venue: "Matera",
+      title: "A Deep Learning Algorithm to Accelerate AMG Methods in Finite Element Solvers",
+      minisymposium: "Recent advances in polytopal methods for coupled problems"
+    },
+    {
+      dates: "June 19-23, 2023",
+      congress: "Dobbiaco summer school*",
+      venue: "Dobbiaco",
+      title: "A Deep Learning Algorithm to Accelerate AMG Methods in Finite Element Solvers",
+      minisymposium: "Poster session"
+    },
+    {
+      dates: "November 22-24, 2022",
+      congress: "Matematica per l'Intelligenza Artificiale e il Machine Learning*",
+      venue: "Turin",
+      title: "Accelerating Algebraic Multigrid Methods via Artificial Neural Networks",
+      minisymposium: "Workshop"
+    },
+    {
       dates: "Sept. 26-30, 2022",
       congress: "SIAM Conference on Mathematics of Data Science, MDS22",
       venue: "San Diego, CA",
@@ -75,27 +96,6 @@ const TALKS = {
       venue: "Prague",
       title: "Accelerating Algebraic Multigrid Methods via Artificial Neural Networks",
       minisymposium: "Learning Algorithms, Domain Decomposition Methods, and Applications"
-    },
-    {
-      dates: "November 22-24, 2022",
-      congress: "Matematica per l'Intelligenza Artificiale e il Machine Learning*",
-      venue: "Turin",
-      title: "Accelerating Algebraic Multigrid Methods via Artificial Neural Networks",
-      minisymposium: "Workshop"
-    },
-    {
-      dates: "June 19-23, 2023",
-      congress: "Dobbiaco summer school*",
-      venue: "Dobbiaco",
-      title: "A Deep Learning Algorithm to Accelerate AMG Methods in Finite Element Solvers",
-      minisymposium: "Poster session"
-    },
-    {
-      dates: "August 28th - September 1st, 2023",
-      congress: "SIMAI 2023",
-      venue: "Matera",
-      title: "A Deep Learning Algorithm to Accelerate AMG Methods in Finite Element Solvers",
-      minisymposium: "Recent advances in polytopal methods for coupled problems"
     },
   ]
 };
