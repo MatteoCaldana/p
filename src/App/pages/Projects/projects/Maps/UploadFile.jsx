@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { wmaKernel, convolution } from "../WaText/engine/movingAverage";
 
 const PI_180 = 1.7453292519943295e-02;
 
@@ -127,15 +128,20 @@ const parseXml = (xml) => {
     }
     if (i > 0) {
       const { dist, steep } = dist3d(pt, prevPt);
-      pt.dist3d = prevPt.dist3d + dist;
-      pt.distVi = prevPt.distVi + distVincenty(pt, prevPt);
-      pt.distance = prevPt.distance + pt.speed;
-      pt.steep3d = isFinite(steep) ? steep * 100 : 0;
-      const tmp = (pt.ele - prevPt.ele) * 200 / (pt.speed + prevPt.speed);
-      pt.steepness = isFinite(tmp) ? Math.sign(tmp) * Math.min(Math.abs(tmp), 100) : 0;
+      // we assume data is captured every second
+      // if faster than 5.5m/s than we assume missing data
+      // pt.speed3d = dist > 5.5 ? 0 : dist;
+      pt.distance = prevPt.distance + dist;
+      //pt.distVi = prevPt.distVi + distVincenty(pt, prevPt);
+      //pt.distance = prevPt.distance + pt.speed;
+      pt.steepness = isFinite(steep) ? steep * 100 : 0;
+      //const tmp = (pt.ele - prevPt.ele) * 200 / (pt.speed + prevPt.speed);
+      //pt.steepness = isFinite(tmp) ? Math.sign(tmp) * Math.min(Math.abs(tmp), 100) : 0;
     } else {
       pt.dist3d = 0;
       pt.distVi = 0;
+      pt.speed3d = 0;
+      pt.steepness = 0;
       pt.distance = pt.speed;
     }
     prevPt = pt;
@@ -151,7 +157,38 @@ const UploadFile = ({ setData }) => {
     file.text().then(text => {
       const parser = new DOMParser();
       const xml = parser.parseFromString(text, "text/xml");
-      setData(parseXml(xml));
+
+      const data = parseXml(xml);
+
+      const FIELDS = ['ele', 'speed', 'accuracy'];
+      const FIELDS_SMOOTH = ['speed', 'steepness'];
+      const kernel_w = wmaKernel(data.length, 90);
+      //const kernel_e = emaKernel(data.length, 0.98);
+      const smoothElem = Object.fromEntries(
+        FIELDS_SMOOTH.map(
+          f =>
+            [
+              `${f}`,
+              convolution(data.map(x => x[f]), kernel_w)
+            ],
+        )
+      );
+
+      const fminmax = Object.fromEntries(FIELDS.map(field =>
+        [field, [
+          Math.min(...data.map(o => o[field])),
+          Math.max(...data.map(o => o[field]))
+        ]]
+      ))
+
+      let normData = [];
+      for (let i = 0; i < data.length; ++i) {
+        const normElem = Object.fromEntries(FIELDS.map(f => [`${f}_norm`, (data[i][f] - fminmax[f][0]) / (fminmax[f][1] - fminmax[f][0])]));
+        normData.push({ ...data[i], ...normElem });
+        Object.entries(smoothElem).forEach(keyval => { normData[i][keyval[0]] = keyval[1][i]; });
+      }
+
+      setData(normData);
     })
   }, [file])
 

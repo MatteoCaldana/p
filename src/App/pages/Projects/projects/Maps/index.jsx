@@ -24,19 +24,21 @@ const GeolocationStats = ({ geolocation }) => {
 
 const Maps = () => {
   const geolocation = useGeolocation({ enableHighAccuracy: true });
-  const [dataGPX, setDataGPX] = useState([{ latitude: 44.4642, longitude: 9.1900 }]);
+  const [dataGPX, setDataGPX] = useState([{ latitude: 45.4642, longitude: 9.1900 }]);
+  const [hoverPointIdx, setHoverPointIdx] = useState(undefined);
+
   useEffect(() => {
     if (dataGPX.length === 1 && !geolocation.error && geolocation.latitude) {
       setDataGPX([geolocation]);
     }
   }, [geolocation])
-  console.log(dataGPX)
+
   return (
     <>
       <UploadFile setData={setDataGPX} />
       <GeolocationStats geolocation={geolocation} />
-      <MapBox data={dataGPX} />
-      <DataPlot data={dataGPX} />
+      <MapBox data={dataGPX} hoverPointIdx={hoverPointIdx} />
+      {dataGPX && dataGPX.length > 1 && <DataPlot data={dataGPX} setHoverPointIdx={setHoverPointIdx} />}
     </>
   );
 }

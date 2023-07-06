@@ -1,7 +1,9 @@
-import { MAP_OVERLAYS, MAP_TILES } from './mapTiles'
 import { LayersControl, MapContainer, TileLayer, CircleMarker, Circle, Polyline } from 'react-leaflet';
+import { useMap } from 'react-leaflet/hooks'
 import 'leaflet/dist/leaflet.css';
+
 import FullscreenControl from './FullscreenControl';
+import { MAP_OVERLAYS, MAP_TILES } from './mapTiles'
 
 const meanPosition = (data) =>
   data.map(x => [x.latitude, x.longitude])
@@ -21,14 +23,14 @@ const DataOverlay = ({ data }) => {
     } else {
       // TODO: color polyline based on scalar field
       // TODO: show accuracy
-      //return <Polyline positions={data.map(x => [x.latitude, x.longitude])} />;
-      return (
-        <>
-          {data.map(x =>
-            <Circle center={[x.latitude, x.longitude]} radius={x.accuracy} pathOptions={{ color: '#FFFFFF' }} />
-          )}
-        </>
-      );
+      return <Polyline positions={data.map(x => [x.latitude, x.longitude])} />;
+      // return (
+      //   <>
+      //     {data.map((x, i) =>
+      //       <Circle key={i} center={[x.latitude, x.longitude]} radius={x.accuracy} pathOptions={{ color: colormap['RdGr'](x.ele_norm) }} />
+      //     )}
+      //   </>
+      // );
     }
   }
   return <></>;
@@ -36,14 +38,26 @@ const DataOverlay = ({ data }) => {
 
 // TODO: show point in plot hover
 
-const MapBox = ({ data }) => {
+const ChangeViewOnCenterChange = ({ center }) => {
+  const map = useMap();
+  const old_center = map.getCenter();
+  const diff = [old_center.lat - center[0], old_center.lng - center[1]];
+  if (diff[0] * diff[0] + diff[1] * diff[1] > 1e-3)
+    map.setView(center, map.getZoom());
+  return null;
+}
+
+const MapBox = ({ data, hoverPointIdx }) => {
+  const center = meanPosition(data);
   return (
     <MapContainer
-      center={meanPosition(data)}
+      center={center}
       zoom={13}
-      style={{ height: 500, width: "100%" }}
+      style={{ height: 400, width: "100%" }}
     >
+      <ChangeViewOnCenterChange center={center} />
       <DataOverlay data={data} />
+      {hoverPointIdx && <CircleMarker center={[data[hoverPointIdx].latitude, data[hoverPointIdx].longitude]} radius={2} />}
       <FullscreenControl />
       <LayersControl position="topright">
         {

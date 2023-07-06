@@ -24,7 +24,7 @@ const dot = (a, b) => {
     return res;
 }
 
-// returns kernel.length - array.length + 1 values
+// returns array.length values, kernel.length should be 2*array.length - 1
 const convolution = (array, kernel) => {
     const kn = kernel.length;
     const an = array.length;
@@ -39,10 +39,10 @@ const convolution = (array, kernel) => {
 
 const wmaKernel = (n, window) => {
     const kernel = [
-        ...Array(n - window).fill(0),
+        ...Array(n - window + 1).fill(0),
         ...range(1, window),
         ...range(window, 0, -1),
-        ...Array(n - window).fill(0)
+        ...Array(n - window + 1).fill(0)
     ]; // [0..0,1..window..1,0..0]
     return kernel;
 }
@@ -55,4 +55,4 @@ const emaKernel = (n, decay) => {
     return kernel;
 }
 
-export { sma, wmaKernel, emaKernel, convolution };
+export { sma, emaKernel, wmaKernel, convolution };

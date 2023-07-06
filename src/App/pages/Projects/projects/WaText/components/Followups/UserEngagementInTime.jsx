@@ -19,7 +19,6 @@ const plotlyColors = [
   '#17becf'   // blue-teal
 ];
 
-const N = 10000;
 const defaultThreshold = 90;
 
 const calculateValue = t => t / 100;
@@ -46,7 +45,7 @@ const UserEngagementInTime = ({ conversationDf, timeSerie, logaxis = false }) =>
   const allSenders = Object.keys(timeSerie).filter(x => x !== "");
   const [senders, setSenders] = useState(allSenders.slice(0, 2));
   const [thresholdCommitted, setThresholdCommitted] = useState(calculateValue(defaultThreshold));
-  const emaK = emaKernel(N, thresholdCommitted);
+  const emaK = emaKernel(timeSerie.length, thresholdCommitted);
 
   let time = conversationDf.map(x => new Date(x.timestampStart));
   let table = [];

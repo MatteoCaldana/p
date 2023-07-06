@@ -55,8 +55,8 @@ const projects = [
     },
     {
         path: "maps",
-        title: "[WIP] Trekking Maps & GPX Visualizer",
-        abstract: "A very small app to choose your own tiling provider and visualize GPX track. Every time I go hiking, the best information is on a different site/app depending on the trail I am following. In this way I have all the information I need in one place and, after the hike, I can analyze the GPX data exported from my iPhone.",
+        title: "Trekking Maps & GPX Visualizer",
+        abstract: "[WIP] A small app to choose your own tiling provider and visualize GPX track. Every time I go hiking, the best information is on a different provider depending on the trail I am following. In this way I have all the information I need in one place and, after the hike, I can visualize the GPX data.",
         component: Maps,
         when: "2023",
         tags: ["Javascript", "Data Analysis"]
