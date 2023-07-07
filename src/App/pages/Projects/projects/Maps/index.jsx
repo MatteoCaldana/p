@@ -6,19 +6,22 @@ import UploadFile from './UploadFile';
 import DataPlot from './DataPlot';
 
 const GeolocationStats = ({ geolocation }) => {
-  return !geolocation.error ? (
-    <ul>
-      <li>Latitude: {geolocation.latitude}</li>
-      <li>Longitude: {geolocation.longitude}</li>
-      <li>Location accuracy: {geolocation.accuracy}</li>
-      <li>Altitude: {geolocation.altitude}</li>
-      <li>Altitude accuracy: {geolocation.altitudeAccuracy}</li>
-      <li>Heading: {geolocation.heading}</li>
-      <li>Speed: {geolocation.speed}</li>
-      <li>Timestamp: {geolocation.timestamp}</li>
-    </ul>
-  ) : (
-    <p>Geolocation is not available, sorry.</p>
+  return (
+    <>
+      <h4>Geolocation Data:</h4>
+      {!geolocation.error ? (
+        <ul style={{ columns: 2 }}>
+          <li>Latitude: {geolocation.latitude} &#177; {Math.round(geolocation.accuracy)}</li>
+          <li>Longitude: {geolocation.longitude} &#177; {Math.round(geolocation.accuracy)}</li>
+          <li>Altitude: {geolocation.altitude} &#177; {geolocation.altitudeAccuracy}</li>
+          <li>Heading: {geolocation.heading}</li>
+          <li>Speed: {geolocation.speed}</li>
+          <li>Timestamp: {geolocation.timestamp}</li>
+        </ul>
+      ) : (
+        <p>Geolocation is not available, sorry.</p>
+      )}
+    </>
   );
 };
 
@@ -35,8 +38,8 @@ const Maps = () => {
 
   return (
     <>
-      <UploadFile setData={setDataGPX} />
       <GeolocationStats geolocation={geolocation} />
+      <UploadFile setData={setDataGPX} />
       <MapBox data={dataGPX} hoverPointIdx={hoverPointIdx} />
       {dataGPX && dataGPX.length > 1 && <DataPlot data={dataGPX} setHoverPointIdx={setHoverPointIdx} />}
     </>

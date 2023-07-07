@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { wmaKernel, convolution } from "../WaText/engine/movingAverage";
+import { Button } from '@mui/material';
+import { UploadFileOutlined } from '@mui/icons-material';
 
 const PI_180 = 1.7453292519943295e-02;
 
@@ -193,10 +195,19 @@ const UploadFile = ({ setData }) => {
   }, [file])
 
   return (
-    <input
-      onChange={e => setFile(e.target.files.item(0))}
-      type="file" accept='.gpx'
-    />
+    <Button 
+      variant="outlined" 
+      color="info" 
+      endIcon={<UploadFileOutlined />} 
+      component="label" 
+      style={{ alignItems: 'center', display: 'flex', marginBottom: 10 }}
+    >
+      Upload GPX Track
+      <input
+        onChange={e => setFile(e.target.files.item(0))}
+        type="file" accept='.gpx' hidden
+      />
+    </Button>
   );
 }
 

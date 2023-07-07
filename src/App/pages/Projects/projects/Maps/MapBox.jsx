@@ -36,7 +36,6 @@ const DataOverlay = ({ data }) => {
   return <></>;
 }
 
-// TODO: show point in plot hover
 
 const ChangeViewOnCenterChange = ({ center }) => {
   const map = useMap();
