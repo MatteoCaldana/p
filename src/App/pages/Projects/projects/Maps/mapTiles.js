@@ -17,12 +17,6 @@ const MAP_TILES = [
         name: "OpenStreetMap.DE"
     },
     {
-        url: 'https://tile.osm.ch/switzerland/{z}/{x}/{y}.png',
-        maxNativeZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        name: "OpenStreetMap.CH"
-    },
-    {
         url: 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png',
         maxNativeZoom: 20,
         attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -46,29 +40,19 @@ const MAP_TILES = [
         name: 'OpenStreetMap Hike',
         maxNativeZoom: 18,
     },
-    {
-        url: 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png',
-        attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-        name: "Stadia.OSM",
-        maxNativeZoom: 20
-    },
-    {
-        url: 'https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png',
-        attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-        name: "Stadia.Outdoors",
-        maxNativeZoom: 20
-    },
+    // TODO: register API KEY to use in prod
+    //       https://stackoverflow.com/questions/61358989/react-leaflet-not-loading-tiles-and-gilving-403-request-error
     // {
-    //     url: 'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
-    //     attribution: '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    //     maxNativeZoom: 20,
-    //     name: "CyclOSM"
+    //     url: 'https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png',
+    //     attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+    //     name: "Stadia.OSM",
+    //     maxNativeZoom: 20
     // },
     // {
-    //     attribution: '<a target="_blank" href="https://www.seznam.cz/">Seznam.cz</a> - <a target="_blank" href="http://openstreetmap.org">OpenStreetMap</a>, under <a target="_blank" href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>',
-    //     url: 'https://mapserver.mapy.cz/turist-m/{z}-{x}-{y}.png',
-    //     name: 'Mapy',
-    //     maxNativeZoom: 18,
+    //     url: 'https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png',
+    //     attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+    //     name: "Stadia.Outdoors",
+    //     maxNativeZoom: 20
     // },
     {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &amp; USGS',
