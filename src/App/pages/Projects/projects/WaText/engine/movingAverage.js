@@ -28,7 +28,7 @@ const dot = (a, b) => {
 const convolution = (array, kernel) => {
     const kn = kernel.length;
     const an = array.length;
-    const halfk = Math.trunc(kn / 2); 
+    const halfk = Math.trunc(kn / 2);
     let res = [];
     for (let i = 0; i < an; ++i) {
         const kwindow = kernel.slice(halfk - i, halfk - i + an);

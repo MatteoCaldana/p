@@ -15,24 +15,24 @@ const MAX_POINTS = 200;
 const cumsum = (vals) => {
   const x = vals.map(x => x.timestamp);
   const y = vals.map(x => x.y).map((sum => value => sum += value)(0));
-  if( x.length <= MAX_POINTS ) {
-    return {x, y};
-  }     
+  if (x.length <= MAX_POINTS) {
+    return { x, y };
+  }
   let xFilter = [], yFilter = [];
-  for(let i = 0; i < x.length; i+=Math.trunc(x.length/MAX_POINTS)+1) {
+  for (let i = 0; i < x.length; i += Math.trunc(x.length / MAX_POINTS) + 1) {
     xFilter.push(x[i]);
     yFilter.push(y[i]);
   }
-  xFilter.push(x[x.length-1]);
-  yFilter.push(y[x.length-1]);
-  return {x:xFilter, y:yFilter};
+  xFilter.push(x[x.length - 1]);
+  yFilter.push(y[x.length - 1]);
+  return { x: xFilter, y: yFilter };
 }
 
 const plotGenerator = (textDf) => {
   const groupBySender = d3.group(textDf, x => x.sender);
   let timestampBySender = [];
   groupBySender.forEach((val, key) => {
-    if (key !== "") {  
+    if (key !== "") {
       timestampBySender.push({
         type: 'scatter',
         ...cumsum(val),

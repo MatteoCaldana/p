@@ -29,7 +29,7 @@ const CustomSlider = ({ setThresholdCommitted }) => {
     <Grid container justifyContent="center" alignItems="center">
       Select smoothing: {calculateValue(state)}
       <Slider
-        style={{maxWidth: 300}}
+        style={{ maxWidth: 300 }}
         value={state}
         onChange={(_, value) => setState(value)}
         onChangeCommitted={(_, value) => setThresholdCommitted(calculateValue(value))}

@@ -8,6 +8,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { Grid } from "@mui/material";
 
+import preval from 'preval.macro'
+
 import appRoutes from "./routes";
 import projects from "./pages/Projects/projectsList";
 import AbstractProject from "./pages/Projects/projects/AbstractProject";
@@ -44,7 +46,7 @@ const App = () => {
           <Grid container justifyContent="center" alignItems="center">
             <Grid item xs={11}>
               <Grid container justifyContent="space-between" alignItems="center">
-                <Grid item style={{ fontSize: 12 }}>Last update: 2023-06-18</Grid>
+                <Grid item style={{ fontSize: 12 }}>Last update: {preval`module.exports = new Date().toISOString().split('T')[0];`}</Grid>
                 <TypographyLink component={'span'} to={`mailto:${EMAIL}`} style={{ fontSize: 12 }}>
                   Contact me!
                 </TypographyLink>

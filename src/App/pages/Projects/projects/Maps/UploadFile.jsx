@@ -195,11 +195,11 @@ const UploadFile = ({ setData }) => {
   }, [file])
 
   return (
-    <Button 
-      variant="outlined" 
-      color="info" 
-      endIcon={<UploadFileOutlined />} 
-      component="label" 
+    <Button
+      variant="outlined"
+      color="info"
+      endIcon={<UploadFileOutlined />}
+      component="label"
       style={{ alignItems: 'center', display: 'flex', marginBottom: 10 }}
     >
       Upload GPX Track

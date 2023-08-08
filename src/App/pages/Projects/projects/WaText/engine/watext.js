@@ -30,7 +30,7 @@ const parseMessageFactory = (settings, contacts) => {
   const parseMessage = (line) => { // ------------------------------------------
     const match = deletedRegex.exec(line);
     if (match) {
-      return { type: "deleted", message: "", sender: match.groups.sender, senderId: contacts.indexOf(match.groups.sender)};
+      return { type: "deleted", message: "", sender: match.groups.sender, senderId: contacts.indexOf(match.groups.sender) };
     } else { // ----------------------------------------------------------------
       const match = plainRegex.exec(line);
       if (match) {
@@ -40,12 +40,12 @@ const parseMessageFactory = (settings, contacts) => {
         if (match) {
           const message = match.groups.message;
           let mediaType = "";
-          settings.mediaTypes.forEach(e => {if (message.includes(e)) mediaType += ":" + e;});
+          settings.mediaTypes.forEach(e => { if (message.includes(e)) mediaType += ":" + e; });
           return { type: "media" + mediaType, message, sender: match.groups.sender, senderId: contacts.indexOf(match.groups.sender) };
         } else { // ------------------------------------------------------------
           const match = otherSpecialRegex.exec(line);
           if (match) {
-            return { type: "info", message: match.groups.message, sender:"", senderId: -1 };
+            return { type: "info", message: match.groups.message, sender: "", senderId: -1 };
           }
         } // -------------------------------------------------------------------
       }
@@ -82,7 +82,7 @@ const separateMessages = (fileText, settings, contacts) => {
       console.log("Error: Line does not match start and does not have any message before!", lines[i]);
     }
   }
-  messages.sort((a,b)=>a.timestamp-b.timestamp);
+  messages.sort((a, b) => a.timestamp - b.timestamp);
   return messages;
 }
 
@@ -90,7 +90,7 @@ const extractTimestamp = (line, settings) => {
   const regexDate = new RegExp(settings.dateRegex);
   const match = regexDate.exec(line);
   const get = (field) => match.groups[field] ? parseInt(match.groups[field]) : null
-  return new Date(get('y') < 100 ? get('y') + 2000: get('y'), get('m') - 1, get('d'), get('H'), get('M'), get('S'));
+  return new Date(get('y') < 100 ? get('y') + 2000 : get('y'), get('m') - 1, get('d'), get('H'), get('M'), get('S'));
 }
 
-export {separateMessages, extractContactsHeuristic};
+export { separateMessages, extractContactsHeuristic };

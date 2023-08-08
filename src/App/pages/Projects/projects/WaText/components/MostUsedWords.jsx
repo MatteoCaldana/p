@@ -69,7 +69,7 @@ const doFilterMostCommon = (wordsInTable, wordCountArray) => {
   // considered a common word and thus removed
   // or we filter it even if it is a one or two letter word
   const commonWord = () => {
-    const nSenders = Math.max(2, Math.trunc(Object.keys(wordsInTable).length*0.8));
+    const nSenders = Math.max(2, Math.trunc(Object.keys(wordsInTable).length * 0.8));
     const commonWords = Object.keys(wordsInTable)
       .flatMap(sender => wordsInTable[sender].slice(0, Math.trunc(WORDS_IN_TABLE_PER_SENDER / 2)));
     let count = {};
@@ -97,8 +97,8 @@ const doFilterMostCommon = (wordsInTable, wordCountArray) => {
 const wordCountToTable = (wordCount, totalCharacters, filterMostCommon) => {
   const wordCountArray = buildWordCountArray(wordCount);
   const wordsInTablePreliminary = buildWordsInTable(wordCountArray);
-  const wordsInTable = filterMostCommon ? doFilterMostCommon(wordsInTablePreliminary, wordCountArray) 
-                                        : wordsInTablePreliminary;
+  const wordsInTable = filterMostCommon ? doFilterMostCommon(wordsInTablePreliminary, wordCountArray)
+    : wordsInTablePreliminary;
 
   const mergedWordsInTable = [...new Set(Object.keys(wordsInTable).flatMap(k => wordsInTable[k]))];
   let rows = [];

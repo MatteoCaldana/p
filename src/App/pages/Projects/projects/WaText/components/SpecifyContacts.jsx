@@ -7,7 +7,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 
 import ListForm from './generic/ListForm';
 
-const SpecifyContacts = ({analyzing, analyze, contacts, setContacts}) =>
+const SpecifyContacts = ({ analyzing, analyze, contacts, setContacts }) =>
   <React.Fragment>
     <Divider style={{ marginTop: 10, marginBottom: 10 }} />
     <Typography variant="h6">

@@ -37,7 +37,7 @@ const FollowUpTable = ({ table, reverseColors = false }) => {
           {senders.map((s, i) =>
             <tr key={i}>
               <td>{s}</td>
-              {senders.map((a,j) => <td key={j} style={{ backgroundColor: getBackgroundColor(table[s][a]), color: '#222' }}>
+              {senders.map((a, j) => <td key={j} style={{ backgroundColor: getBackgroundColor(table[s][a]), color: '#222' }}>
                 {`${table[s][a] ? table[s][a] : ''}`.slice(0, 5)}
               </td>)}
             </tr>

@@ -10,7 +10,7 @@ import Plot from 'react-plotly.js';
  * @param item
  * @returns {boolean}
  */
- export function isObject(item) {
+export function isObject(item) {
   return (item && typeof item === 'object' && !Array.isArray(item));
 }
 

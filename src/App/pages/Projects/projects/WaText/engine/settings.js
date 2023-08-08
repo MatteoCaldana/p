@@ -4,7 +4,7 @@ const settingsIphoneEng = {
     specialCharacter: "‎",
     mediaPrecursor: "‎",
     deletedMessageRegex: "‎This message was deleted.$",
-// media types name in local language
+    // media types name in local language
     mediaTypes: [
         "image",
         "audio",
@@ -23,7 +23,7 @@ const settingsIphoneIta = {
     specialCharacter: "‎",
     mediaPrecursor: "‎",
     deletedMessageRegex: "‎((Hai eliminato questo messaggio)|(Questo messaggio è stato eliminato)).",
-// media types name in local language
+    // media types name in local language
     mediaTypes: [
         "immagine",
         "audio",

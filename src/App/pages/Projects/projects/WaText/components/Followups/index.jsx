@@ -26,7 +26,7 @@ const labels = [
   "Mean Follow-Up Rate",
 ];
 
-const calculateValue = t => 1000 * 5*60 * 1.07 ** t;
+const calculateValue = t => 1000 * 5 * 60 * 1.07 ** t;
 const calculateLabel = t => {
   const r = x => Math.trunc(x / 100) / 10;
   if (t < 1000 * 60) return `${r(t)} s`;
@@ -76,14 +76,14 @@ const Followups = ({ textDf }) => {
           </IconButton>
         </Tooltip>
       </Grid>
-      <CustomSlider setThresholdCommitted={setThresholdCommitted}/>
+      <CustomSlider setThresholdCommitted={setThresholdCommitted} />
       <BasicTabs labels={labels} tabs={[
         { component: () => <TimeGapDistribution textDf={textDf} threshold={thresholdCommitted} /> },
         { component: () => <WhoStartsConversations conversationDf={conversationDf} /> },
-        { component: () => <UserEngagementInTime logaxis timeSerie={meanAnswerTimeSerie} conversationDf={conversationDf}/> },
-        { component: () => <UserEngagementInTime timeSerie={answerRateSerie} conversationDf={conversationDf}/> },
+        { component: () => <UserEngagementInTime logaxis timeSerie={meanAnswerTimeSerie} conversationDf={conversationDf} /> },
+        { component: () => <UserEngagementInTime timeSerie={answerRateSerie} conversationDf={conversationDf} /> },
         { component: () => <FollowUpTable table={meanAnswerTime} /> },
-        { component: () => <FollowUpTable reverseColors table={answerRate}/> }
+        { component: () => <FollowUpTable reverseColors table={answerRate} /> }
       ]} />
     </React.Fragment>
   );

@@ -26,7 +26,7 @@ const allyProps = (index) => {
   };
 }
 
-const BasicTabs = ({labels, tabs}) => {
+const BasicTabs = ({ labels, tabs }) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -36,15 +36,15 @@ const BasicTabs = ({labels, tabs}) => {
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs variant="scrollable" scrollButtons allowScrollButtonsMobile 
+        <Tabs variant="scrollable" scrollButtons allowScrollButtonsMobile
           value={value} onChange={handleChange} textColor="inherit"
         >
           {labels.map((l, i) => <Tab label={l} key={i} {...allyProps(i)} />)}
         </Tabs>
       </Box>
-      {tabs.map((t, i) => 
+      {tabs.map((t, i) =>
         <TabPanel value={value} index={i} key={i}>
-          <t.component/>
+          <t.component />
         </TabPanel>
       )}
     </Box>
