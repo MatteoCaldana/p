@@ -1,30 +1,10 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 
-import { CircularProgress, Typography } from "@mui/material";
 import ColorLink from "../../../components/ColorLink";
+import wrapWithLoading from "../../../components/wrapWithLoading";
 
 const WaText = lazy(() => import("./projects/WaText"));
 const Maps = lazy(() => import("./projects/Maps"));
-
-const Loading = () => {
-  return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <CircularProgress color="secondary" size={100} disableShrink />
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <Typography color="secondary">Project is loading, please wait!</Typography>
-      </div>
-    </div>
-  );
-}
-
-const wrapWithLoading = (Component) => {
-  return () =>
-    <Suspense fallback={<Loading />}>
-      <Component />
-    </Suspense>
-}
 
 const projects = [
   {

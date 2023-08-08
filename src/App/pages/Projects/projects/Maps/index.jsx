@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { lazy, useState, useEffect } from 'react';
 
 import useGeolocation from "react-hook-geolocation";
+
+import wrapWithLoading from '../../../../../components/wrapWithLoading';
 import MapBox from './MapBox';
 import UploadFile from './UploadFile';
-import DataPlot from './DataPlot';
+const DataPlot = lazy(() => import("./DataPlot"));
 
 const GeolocationStats = ({ geolocation }) => {
   return (
@@ -25,6 +27,8 @@ const GeolocationStats = ({ geolocation }) => {
   );
 };
 
+const SuspenseDataPlot = wrapWithLoading(DataPlot);
+
 const Maps = () => {
   const geolocation = useGeolocation({ enableHighAccuracy: true });
   const [dataGPX, setDataGPX] = useState([{ latitude: 45.4642, longitude: 9.1900 }]);
@@ -41,7 +45,7 @@ const Maps = () => {
       <GeolocationStats geolocation={geolocation} />
       <UploadFile setData={setDataGPX} />
       <MapBox data={dataGPX} hoverPointIdx={hoverPointIdx} />
-      {dataGPX && dataGPX.length > 1 && <DataPlot data={dataGPX} setHoverPointIdx={setHoverPointIdx} />}
+      {dataGPX && dataGPX.length > 1 && <SuspenseDataPlot data={dataGPX} setHoverPointIdx={setHoverPointIdx} />}
     </>
   );
 }

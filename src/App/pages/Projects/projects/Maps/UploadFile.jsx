@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { wmaKernel, convolution } from "../WaText/engine/movingAverage";
-import { Button } from '@mui/material';
+import React, { useState } from 'react';
+
+import { Box, Button, LinearProgress } from '@mui/material';
 import { UploadFileOutlined } from '@mui/icons-material';
+
+import { wmaKernel, convolution } from "../WaText/engine/movingAverage";
 
 const PI_180 = 1.7453292519943295e-02;
 
@@ -152,9 +154,9 @@ const parseXml = (xml) => {
 }
 
 const UploadFile = ({ setData }) => {
-  const [file, setFile] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
+  const parseFile = (file) => {
     if (!file) return;
     file.text().then(text => {
       const parser = new DOMParser();
@@ -191,23 +193,30 @@ const UploadFile = ({ setData }) => {
       }
 
       setData(normData);
+      setIsLoading(false);
     })
-  }, [file])
+  };
 
   return (
-    <Button
-      variant="outlined"
-      color="info"
-      endIcon={<UploadFileOutlined />}
-      component="label"
-      style={{ alignItems: 'center', display: 'flex', marginBottom: 10 }}
-    >
-      Upload GPX Track
-      <input
-        onChange={e => setFile(e.target.files.item(0))}
-        type="file" accept='.gpx' hidden
-      />
-    </Button>
+    <>
+      <Button
+        variant="outlined"
+        color="info"
+        endIcon={<UploadFileOutlined />}
+        component="label"
+        style={{ alignItems: 'center', display: 'flex', marginBottom: 10 }}
+        disabled={isLoading}
+      >
+        {isLoading ? "File is being parsed, please wait" : "Upload GPX Track"}
+        <input
+          onChange={e => { setIsLoading(true); parseFile(e.target.files.item(0)) }}
+          type="file" accept='.gpx' hidden
+        />
+      </Button>
+      <Box sx={{ width: '100%' }}>
+      {isLoading && <LinearProgress color="info" size="lg"/>}
+    </Box>
+    </>
   );
 }
 
