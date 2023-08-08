@@ -1,11 +1,15 @@
+import { useState } from "react";
 import Plot from "react-plotly.js";
 
 const DataPlot = ({ data, setHoverPointIdx }) => {
+  const [xField, setXField] = useState('date');
+  const xDate = Array(3).fill(data.map(x => x.date));
+  const xDistance = Array(3).fill(data.map(x => x.distance));
   return (
     <Plot
       data={[
         ...['ele', 'steepness', 'speed'].map((field, i) => ({
-          x: data.map(x => x.date),
+          x: data.map(x => x[xField]),
           y: data.map(x => x[field]),
           type: 'plot',
           mode: 'lines',
@@ -22,7 +26,12 @@ const DataPlot = ({ data, setHoverPointIdx }) => {
           y: 1
         },
         hovermode: "x",
-        xaxis: { 'showspikes': true, spikemode: 'across+toaxis', spikecolor: 'black', spikethickness: 2 },
+        xaxis: {
+          showspikes: true,
+          spikemode: 'across+toaxis',
+          spikecolor: 'black',
+          spikethickness: 2
+        },
         // https://github.com/plotly/react-plotly.js/issues/147
         // https://plotly.com/javascript/uirevision/
         uirevision: 'true',
@@ -50,19 +59,21 @@ const DataPlot = ({ data, setHoverPointIdx }) => {
           {
             buttons: [
               {
-                args: [{ x: Array(3).fill(data.map(x => x.date)) }],
+                args: [{ x: xDate }],
                 label: 'Time',
-                method: 'update'
+                method: 'update',
+                name: 'date'
               },
               {
-                args: [{ x: Array(3).fill(data.map(x => x.distance)) }],
+                args: [{ x: xDistance }],
                 label: 'Space',
-                method: 'update'
+                method: 'update',
+                name: 'distance'
               }
             ],
             direction: 'left',
             pad: { 'r': 10, 't': 10 },
-            showactive: true,
+            showactive: false,
             type: 'buttons',
             x: 0.1,
             xanchor: 'left',
@@ -71,11 +82,10 @@ const DataPlot = ({ data, setHoverPointIdx }) => {
           }
         ]
       }}
-      config={{
-        displayModeBar: false,
-      }}
+      config={{ displayModeBar: false }}
       onHover={e => setHoverPointIdx(e.points[0].pointIndex)}
       onUnhover={() => setHoverPointIdx(undefined)}
+      onButtonClicked={e => setXField(e.button.name)}
       style={{ width: "100%" }}
     />
   );
