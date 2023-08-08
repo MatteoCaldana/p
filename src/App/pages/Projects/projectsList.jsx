@@ -5,6 +5,7 @@ import wrapWithLoading from "../../../components/wrapWithLoading";
 
 const WaText = lazy(() => import("./projects/WaText"));
 const Maps = lazy(() => import("./projects/Maps"));
+const Wasm = lazy(() => import("./projects/Wasm"));
 
 const projects = [
   {
@@ -64,6 +65,14 @@ const projects = [
     component: wrapWithLoading(Maps),
     when: "2023",
     tags: ["Javascript", "Data Analysis"]
+  },
+  {
+    path: "wasm",
+    title: "WASM",
+    abstract: "[WIP] Run performance critical code using WASM generated from Rust.",
+    component: wrapWithLoading(Wasm),
+    when: "2023",
+    tags: ["Rust"]
   }
 ];
 
