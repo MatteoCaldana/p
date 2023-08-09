@@ -20,6 +20,7 @@ const DataPlot = ({ data, setHoverPointIdx }) => {
       ]}
       layout={{
         margin: { l: 60, r: 150, t: 20, b: 40 },
+        height: 350,
         legend: {
           x: 1.2,
           xanchor: 'right',
@@ -72,12 +73,12 @@ const DataPlot = ({ data, setHoverPointIdx }) => {
               }
             ],
             direction: 'left',
-            pad: { 'r': 10, 't': 10 },
+            pad: { 'r': 0, 't': 0 },
             showactive: false,
             type: 'buttons',
-            x: 0.1,
+            x: 0.0,
             xanchor: 'left',
-            y: 1.1,
+            y: 1.15,
             yanchor: 'top'
           }
         ]

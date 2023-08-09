@@ -56,7 +56,7 @@ const MapBox = ({ data, hoverPointIdx }) => {
     >
       <ChangeViewOnCenterChange center={center} />
       <DataOverlay data={data} />
-      {hoverPointIdx && <CircleMarker center={[data[hoverPointIdx].latitude, data[hoverPointIdx].longitude]} radius={2} />}
+      {hoverPointIdx && <CircleMarker center={[data[hoverPointIdx].latitude, data[hoverPointIdx].longitude]} radius={2} color='black' />}
       <FullscreenControl />
       <LayersControl position="topright">
         {
