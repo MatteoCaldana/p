@@ -5,7 +5,7 @@ import useGeolocation from "react-hook-geolocation";
 import wrapWithLoading from '../../../../../components/wrapWithLoading';
 import MapBox from './MapBox';
 import UploadFile from './UploadFile';
-import img from "../../../../../assets/projects/gpx.png"
+import img from "../../../../../assets/projects/gpx.jpg"
 
 const DataPlot = lazy(() => import("./DataPlot"));
 
@@ -15,8 +15,8 @@ const GeolocationStats = ({ geolocation }) => {
       <h4>Geolocation Data:</h4>
       {!geolocation.error ? (
         <ul style={{ columns: 2 }}>
-          <li>Latitude: {geolocation.latitude?.toFixed(4)} &#177; {Math.round(geolocation.accuracy)}</li>
-          <li>Longitude: {geolocation.longitude?.toFixed(4)} &#177; {Math.round(geolocation.accuracy)}</li>
+          <li>Latitude: {geolocation.latitude?.toFixed(5)} &#177; {Math.round(geolocation.accuracy)}</li>
+          <li>Longitude: {geolocation.longitude?.toFixed(5)} &#177; {Math.round(geolocation.accuracy)}</li>
           <li>Altitude: {geolocation.altitude?.toFixed(1)} &#177; {geolocation.altitudeAccuracy?.toFixed(1)}</li>
           <li>Heading: {geolocation.heading?.toFixed(2)}</li>
           <li>Speed: {geolocation.speed?.toFixed(2)}</li>

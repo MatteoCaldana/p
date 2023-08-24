@@ -16,7 +16,7 @@ const DataOverlay = ({ data }) => {
     if (data.length === 1) {
       return (
         <>
-          <CircleMarker center={[data[0].latitude, data[0].longitude]} radius={3} />
+          <CircleMarker center={[data[0].latitude, data[0].longitude]} radius={2} fill={true} opacity={1} fillOpacity={1}/>
           <Circle center={[data[0].latitude, data[0].longitude]} radius={data[0].accuracy} />
         </>
       );
