@@ -2,7 +2,8 @@ const dark = {
     palette: {
         mode: "dark",
         primary: {
-            main: '#101010',
+            main: '#fff',
+            light: '#272727',
         },
         secondary: {
             main: '#F50057',

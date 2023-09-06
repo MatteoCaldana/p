@@ -2,11 +2,11 @@ const light = {
     palette: {
         mode: "light",
         background: {
-            default: "#ede8e1",
-            paper: '#ede8e1'
+            default: "#f6f3ee",
+            paper: '#eee7dc'
         },
         primary: {
-            main: '#dbcab4',
+            main: '#d4c4a8',
         },
         secondary: {
             main: '#F50057',

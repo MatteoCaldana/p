@@ -25,7 +25,7 @@ const TEACHING = {
       institution: "Politecnico di Milano",
       programme: "M.S. in Mathematical Engineering",
       course: "Advanced programming for scientific computing (ENG)",
-      notes: <>Conducting C++ laboratories, preparing material, helping grading projects (<ColorLink to="https://github.com/pacs-course/pacs-examples">course repo</ColorLink>)</>,
+      notes: <>Conducting C++ laboratories, preparing material, helping grading projects (<ColorLink to="https://github.com/pacs-course/pacs-Labs">laboratory repo</ColorLink>)</>,
     },
     {
       ay: "Spring 2023",
@@ -39,7 +39,7 @@ const TEACHING = {
       institution: "Politecnico di Milano",
       programme: "M.S. in High Performance Computing Engineering",
       course: "Advanced methods for scientific computing (ENG)",
-      notes: <>Conducting C++ laboratories, preparing material, helping grading projects (<ColorLink to="https://github.com/HPC-Courses/AMSC-Examples">course repo</ColorLink>)</>,
+      notes: <>Conducting C++ laboratories, preparing material, helping grading projects (<ColorLink to="https://github.com/HPC-Courses/AMSC-Labs">laboratory repo</ColorLink>)</>,
     },
     {
       ay: "Spring 2022",
