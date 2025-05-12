@@ -13,6 +13,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import myProfilePic from '../../../assets/me.jpg';
 import { EMAIL } from '../../../assets/constants.js';
 import Layout from "../../../components/Layout";
+import { GitHub, School } from "@mui/icons-material";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Homepage = () => {
             Matteo Caldana
           </Typography>
           <Typography variant="h5" color="textSecondary">
-            PhD Student in Mathematical Models at Politecnico di Milano
+            Postdoctoral Researcher at Politecnico di Milano
           </Typography>
         </Grid>
         <CardMedia
@@ -36,11 +37,11 @@ const Homepage = () => {
       </Grid>
 
       <Typography component="p" style={{ paddingBottom: 10 }}>
-        I am a PhD student in applied mathematics with a passion for programming. My main interests are high-performance computing (especially the finite element method) and machine learning. It reflects in the languages I love: C++ for the zero-overhead principle and Python, which enables you to write code faster than in any other language.
+        I am a Postdoctoral Researcher student in applied mathematics. My main interests are high-performance computing and machine learning. It reflects in the languages I love: C++ for the zero-overhead principle and Python, which enables you to write code faster than in any other language. In my free times I enjoy hackathlons and CTF challenges.
       </Typography>
 
       <Typography component="p" style={{ paddingBottom: 10 }}>
-        I also had the opportunity to develop code for large projects in other languages: Java, JavaScript, MATLAB, and SQL. Recently, I have been experimenting with Julia, and I have great expectations for it.
+        I also had the opportunity to develop code for large projects in other languages: Java, JavaScript, MATLAB, and SQL. 
       </Typography>
 
       <Typography component="p" style={{ paddingBottom: 10 }}>
@@ -54,7 +55,7 @@ const Homepage = () => {
       <Button variant="outlined" color="secondary" endIcon={<KeyboardArrowRightIcon />} onClick={() => navigate('/cv')}>
         Read my full CV!
       </Button>
-
+      <div style={{"minHeight": 15}}/>
       <Typography variant="h6">
         Get in contact with me:
       </Typography>
@@ -62,6 +63,16 @@ const Homepage = () => {
         <ListItem dense>
           <Button color="info" href="https://it.linkedin.com/in/matteo-caldana-7671851b0" startIcon={<LinkedInIcon />}>
             Linkedin
+          </Button>
+        </ListItem>
+        <ListItem dense>
+          <Button color="info" href="https://github.com/MatteoCaldana/" startIcon={<GitHub />}>
+            Github
+          </Button>
+        </ListItem>
+        <ListItem dense>
+          <Button color="info" href="https://scholar.google.com/citations?user=1eUNZJQAAAAJ&hl=en" startIcon={<School />}>
+            Google Scholar
           </Button>
         </ListItem>
         <ListItem dense>

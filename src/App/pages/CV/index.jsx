@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import ColorLink from "../../../components/ColorLink";
 import Layout from "../../../components/Layout";
 import ScrollHashToElement from "../../../components/ScrollHashToElement";
-import { TALKS, PUBLICATION, TEACHING } from "./constants"
+import { ORGANIZED_TALKS, INVITED_TALKS, CONTRIBUTED_TALKS, PUBLICATION, TEACHING, PREPRINTS } from "./constants"
 
 // TODO: put skill summary?
 
@@ -29,6 +29,9 @@ const URL_INTERNODES = "http://www1.mate.polimi.it/~forma/Didattica/ProgettiPacs
 const URL_PAOLA = "https://antonietti.faculty.polimi.it/"
 const URL_LUCA = "http://www1.mate.polimi.it/~dede/"
 //const URL_M3I = "https://www.mate.polimi.it/dottorato/index.php"
+
+const URL_EPFL = "https://www.epfl.ch/"
+const URL_JAN = "https://en.wikipedia.org/wiki/Jan_S._Hesthaven"
 
 const SectionLayout = (props) =>
   <section id={props.title.split(' ')[0]}>
@@ -71,24 +74,39 @@ const WorkExperience = () =>
       title={<>Junior Data Engineer at <ColorLink to="https://www.quantyca.it/">Quantyca</ColorLink></>}
       period={"Sept. 2020 - Oct. 2021"}
     >
-      <li>Contributed to PoC aimed at probing the viability of automating manual tasks through deep learning.</li>
+      <li>Contributed to proof of concepts to automate product quality inspection with computer vision.</li>
       <li>Worked with Agile practices to design and implement web applications deployed as microservices on cloud platforms (JavaScript, React, Java, Spring Boot, Docker, Kubernetes, AWS, GCP, Figma).</li>
       <li>Collaborated to the creation and deployment of data integration applications (MySQL, Vertica, Talend, Kafka, Elasticsearch, Spark).</li>
       <li>Main developer of a SaltStack application for detection and remediation of on-premise software malfunctions.</li>
-      <li>Tutoring new employees on Springboot and React</li>
+      <li>Tutored two new employees on Springboot and React</li>
     </ExperienceLayout>
   </React.Fragment>
 
 const Education = () =>
   <React.Fragment>
     <ExperienceLayout
-      title={<>PhD in Mathematical Models and Methods in Engineering at Politecnico di Milano</>}
-      period={<>Nov. 2021 - <i>Present</i></>}
+      title={<>Postdoctoral Researcher at Politecnico di Milano</>}
+      period={<>Nov. 2024 - <i>Present</i></>}
     >
-      <li><u>Supervisors</u>: prof. <ColorLink variant="small" to={URL_PAOLA}>Paola F. Antonietti</ColorLink>, prof. <ColorLink variant="small" to={URL_LUCA}>Luca Dede'</ColorLink></li>
-      <li>Author of 1 peer-reviewed publication on ML and numerical algorithms (C++, MPI, Python, Tensorflow, Pytorch, Pandas, Numpy). (<ColorLink variant="small" to="/cv/#Publications">see below</ColorLink>)</li>
-      <li>Teaching assistant for more than 100 hours, including Master's courses on advanced programming (<u>code publicly available</u>). (<ColorLink variant="small" to="/cv/#Teaching">see below</ColorLink>)</li>
-      <li>Invited to 3 talks at congress and scientific events. (<ColorLink variant="small" to="/cv/#Invited">see below</ColorLink>)</li>
+      <li>Lead developer of a high-performance finite element C++ library for the European Project ERC SyG NEMESIS.</li>
+      <li>Developed graph neural networks-based graph partitioner, reducing computational cost </li>
+    </ExperienceLayout>
+    <br />
+    <ExperienceLayout
+      title={<>Visiting PhD student at <ColorLink variant="small" to={URL_EPFL}>École Polytechnique Fédérale de Lausanne (EPFL)</ColorLink></>}
+      period="March 2024 - June 2024"
+    >
+      <li>Researched deep learning based reduced order models under supervision of prof. <ColorLink variant="small" to={URL_JAN}>Jan S. Hesthaven</ColorLink></li>
+    </ExperienceLayout>
+    <br />
+    <ExperienceLayout
+      title={<>PhD in Mathematical Models and Methods in Engineering at Politecnico di Milano</>}
+      period={<>Nov. 2021 - Nov. 2024</>}
+    >
+      <li>Researched scientific machine learning under the supervision of <ColorLink variant="small" to={URL_PAOLA}>Prof. Paola F. Antonietti</ColorLink> and <ColorLink variant="small" to={URL_LUCA}>Prof. Luca Dede'</ColorLink>.</li>
+      <li>Teaching assistant for more than 120 hours, including Master's courses on advanced programming and machine learning (<u>code publicly available</u>). (<ColorLink variant="small" to="/cv/#Teaching">see below</ColorLink>)</li>
+      <li>Invited spearker to several talks at congress and scientific events. (<ColorLink variant="small" to="/cv/#Organized">see below</ColorLink>)</li>
+      <li>Thesis and project supervisor for Masters' students</li>
     </ExperienceLayout>
     <br />
     <ExperienceLayout
@@ -124,7 +142,7 @@ const Education = () =>
 //       </ul>
 //     </ArticleLayout>
 //     <ArticleLayout shortDesc="Data Science">
-//       Matlab, Python, Numpy, PyPlot, SciPy, Pandas, PyTorch, Tensorflow, Keras
+//       Matlab, Python, Numpy, PyPlot, SciPy, Scikit-learn, Pandas, PyTorch, Tensorflow, Keras, Selenium
 //     </ArticleLayout>
 //     <ArticleLayout shortDesc="Data Engineering">
 //       SQL, Vertica, Talend, Apache Kafka, Elasticsearch, SaltStack, Apache Spark
@@ -134,6 +152,9 @@ const Education = () =>
 //     </ArticleLayout>
 //     <ArticleLayout shortDesc="Software Engineering">
 //       C, C++, MPI, OpenMP, Qt, VTK, CMake, Linux admin
+//     </ArticleLayout>
+//     <ArticleLayout shortDesc="Currently learning">
+//       Julia, Rust
 //     </ArticleLayout>
 //   </React.Fragment>
 
@@ -166,18 +187,36 @@ const makeTable = (table) => {
 }
 
 const Teaching = makeTable(TEACHING);
-const Talks = makeTable(TALKS);
+const OrganizedTalks = makeTable(ORGANIZED_TALKS);
+const InvitedTalks = makeTable(INVITED_TALKS);
+const ContributedTalks = makeTable(CONTRIBUTED_TALKS);
 
 const Publications = () =>
   <table>
     <tbody>
-      {PUBLICATION.map((x, i) =>
+      {PUBLICATION.reverse().map((x, i) =>
         <tr key={i}>
           <td style={{ verticalAlign: "top", padding: 10 }}>
             [{i + 1}]
           </td>
           <td style={{ verticalAlign: "top", padding: 10 }}>
             {x.authors}. {x.title}. In: <i>{x.where}</i> DOI: <ColorLink to={x.doi}>{x.doi.slice(16)}.</ColorLink>
+          </td>
+        </tr>
+      )}
+    </tbody>
+  </table>
+
+const PrePrints = () =>
+  <table>
+    <tbody>
+      {PREPRINTS.reverse().map((x, i) =>
+        <tr key={i}>
+          <td style={{ verticalAlign: "top", padding: 10 }}>
+            [*]
+          </td>
+          <td style={{ verticalAlign: "top", padding: 10 }}>
+            {x.authors}. {x.title}. arXiv preprint: <ColorLink to={`https://arxiv.org/abs/${x.arxiv}`}>{x.arxiv}.</ColorLink>
           </td>
         </tr>
       )}
@@ -199,12 +238,19 @@ const CV = () => {
       <SectionLayout title="Publications">
         <Publications />
       </SectionLayout>
+      <u>Preprints</u>
+      <PrePrints />
       <SectionLayout title="Teaching">
         <Teaching />
       </SectionLayout>
-      <SectionLayout title="Invited and contributed talks at congress and scientific events">
-        <Talks />
-        <>(*): contributed talk</>
+      <SectionLayout title="Organizated minisimposia and scientific events">
+        <OrganizedTalks />
+      </SectionLayout>
+      <SectionLayout title="Invited talks at congresses and scientific events">
+        <InvitedTalks />
+      </SectionLayout>
+      <SectionLayout title="Contributed talks at congresses and scientific events">
+        <ContributedTalks />
       </SectionLayout>
       {/*
       <Skills />

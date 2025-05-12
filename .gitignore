@@ -24,8 +24,3 @@ yarn-error.log*
 
 # dev
 **.vscode
-
-# rust
-wasm/target
-wasm/Cargo.lock
-**/*.rs.bk

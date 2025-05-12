@@ -25,14 +25,14 @@ const projects = [
   {
     path: "https://github.com/MatteoCaldana/julia-sem",
     title: "Matrix free SEM",
-    abstract: "A small Julia library for solving a diffusion problem on a cartesian mesh with matrix-free multigrid.",
+    abstract: "A small Julia library for solving a diffusion problem discretized with the spectral element method on a cartesian mesh with matrix-free multigrid.",
     when: "2022",
     tags: ["Julia"]
   },
   {
     path: "watext",
     title: "WhastApp Analyzer Dashboard",
-    abstract: <>A dashboard to analyze WhatsApp conversations that is a porting to JS of the <ColorLink to={"https://github.com/MatteoCaldana/whatsapp-analyser"}>original Python script</ColorLink>.</>,
+    abstract: <>A dashboard to analyze WhatsApp conversations that is a porting to JS of <ColorLink to={"https://github.com/MatteoCaldana/whatsapp-analyser"}>this original Python script</ColorLink>.</>,
     component: wrapWithLoading(WaText),
     when: "2022",
     tags: ["Javascript"]
