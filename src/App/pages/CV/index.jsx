@@ -40,38 +40,43 @@ const SectionLayout = (props) =>
   </section>
 
 const Title = ({ children }) =>
-  <Typography variant="h5" style={{ textDecoration: 'underline', marginTop: 20 }}>
+  <Typography variant="h4" style={{ textDecoration: 'underline', marginTop: 20 }}>
     {children}
   </Typography>
 
 const ExperienceLayout = (props) =>
   <div style={{ margin: 0, paddingLeft: 10 }}>
-    {props.title}
-    <br />
+    <Typography variant="h6">{props.title}</Typography>
     <i style={{ fontSize: 11, color: "gray", paddingLeft: 8 }}>{props.period}</i>
-    <small>
+    <div>
       <ul style={{ marginTop: 0, paddingLeft: 20 }}>
         {props.children}
       </ul>
-    </small>
+    </div>
   </div >
 
 
 const WorkExperience = () =>
   <React.Fragment>
     <ExperienceLayout
-      title={<>Freelance Software Engineer at <ColorLink to="https://toolspole.com/">ToolsPole</ColorLink></>}
+      title={<>Postdoctoral Researcher at Politecnico di Milano</>}
+      period={<>Nov. 2024 - <i>Present</i></>}
+    >
+      <li>Lead developer of a high-performance finite element C++ library for the <ColorLink variant="small" to="https://erc-nemesis.eu/">European Project ERC SyG NEMESIS</ColorLink>.</li>
+      <li>Developed graph neural networks-based graph partitioner, reducing computational cost </li>
+    </ExperienceLayout>
+    <br />
+    <ExperienceLayout
+      title={<>Freelance Software Engineer at <ColorLink variant="small" to="https://toolspole.com/">ToolsPole</ColorLink></>}
       period={"Nov. 2020 - Oct. 2021"}
     >
       <li>Developer of Breva, a software for the automation of yacht engineering workflows (C++, CMake, Qt, VTK).</li>
       <li>Contributed to the development of the UI and algorithms for multivariate interpolation, data visualization, and wing profile optimization.</li>
       <li>Profiled and optimized C++ code for scientific computing and 3D renders.</li>
     </ExperienceLayout>
-
     <br />
-
     <ExperienceLayout
-      title={<>Junior Data Engineer at <ColorLink to="https://www.quantyca.it/">Quantyca</ColorLink></>}
+      title={<>Junior Data Engineer at <ColorLink variant="small" to="https://www.quantyca.it/">Quantyca</ColorLink></>}
       period={"Sept. 2020 - Oct. 2021"}
     >
       <li>Contributed to proof of concepts to automate product quality inspection with computer vision.</li>
@@ -84,14 +89,6 @@ const WorkExperience = () =>
 
 const Education = () =>
   <React.Fragment>
-    <ExperienceLayout
-      title={<>Postdoctoral Researcher at Politecnico di Milano</>}
-      period={<>Nov. 2024 - <i>Present</i></>}
-    >
-      <li>Lead developer of a high-performance finite element C++ library for the <ColorLink variant="small" to="https://erc-nemesis.eu/">European Project ERC SyG NEMESIS</ColorLink>.</li>
-      <li>Developed graph neural networks-based graph partitioner, reducing computational cost </li>
-    </ExperienceLayout>
-    <br />
     <ExperienceLayout
       title={<>Visiting PhD student at <ColorLink variant="small" to={URL_EPFL}>École Polytechnique Fédérale de Lausanne (EPFL)</ColorLink></>}
       period="March 2024 - June 2024"

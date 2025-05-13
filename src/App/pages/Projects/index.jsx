@@ -42,7 +42,7 @@ const Projects = () => {
 
   return (
     <Layout style={{ maxWidth: 1000, margin: "auto" }}>
-      <Typography variant="h4" align="center">
+      <Typography variant="h4" align="center" style={{marginTop: 20}}>
         A collection of my personal projects
       </Typography>
       <FormControl sx={{ m: 1, width: 300 }}>
