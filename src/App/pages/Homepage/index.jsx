@@ -37,11 +37,11 @@ const Homepage = () => {
       </Grid>
 
       <Typography component="p" style={{ paddingBottom: 10 }}>
-        I am a Postdoctoral Researcher student in applied mathematics. My main interests are high-performance computing and machine learning. It reflects in the languages I love: C++ for the zero-overhead principle and Python, which enables you to write code faster than in any other language. In my free times I enjoy hackathlons and CTF challenges.
+        I am a Postdoctoral Researcher student in applied mathematics. My main interests are high-performance computing and machine learning. It reflects in the languages I love: C++ for the zero-overhead principle and Python, which enables you to write code faster than in any other language. In my free time, I enjoy hackathons and CTF challenges.
       </Typography>
 
       <Typography component="p" style={{ paddingBottom: 10 }}>
-        I also had the opportunity to develop code for large projects in other languages: Java, JavaScript, MATLAB, and SQL. 
+        I also had the opportunity to develop code for large projects in other languages: Java, JavaScript, MATLAB, and SQL.
       </Typography>
 
       <Typography component="p" style={{ paddingBottom: 10 }}>
@@ -55,7 +55,7 @@ const Homepage = () => {
       <Button variant="outlined" color="secondary" endIcon={<KeyboardArrowRightIcon />} onClick={() => navigate('/cv')}>
         Read my full CV!
       </Button>
-      <div style={{"minHeight": 15}}/>
+      <div style={{ "minHeight": 15 }} />
       <Typography variant="h6">
         Get in contact with me:
       </Typography>

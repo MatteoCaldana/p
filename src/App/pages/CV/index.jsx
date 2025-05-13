@@ -64,7 +64,7 @@ const WorkExperience = () =>
       period={"Nov. 2020 - Oct. 2021"}
     >
       <li>Developer of Breva, a software for the automation of yacht engineering workflows (C++, CMake, Qt, VTK).</li>
-      <li>Contributed to the development of the UI and algorithms for multivariate interpolation, data visualization and wing profile optimization.</li>
+      <li>Contributed to the development of the UI and algorithms for multivariate interpolation, data visualization, and wing profile optimization.</li>
       <li>Profiled and optimized C++ code for scientific computing and 3D renders.</li>
     </ExperienceLayout>
 
@@ -78,7 +78,7 @@ const WorkExperience = () =>
       <li>Worked with Agile practices to design and implement web applications deployed as microservices on cloud platforms (JavaScript, React, Java, Spring Boot, Docker, Kubernetes, AWS, GCP, Figma).</li>
       <li>Collaborated to the creation and deployment of data integration applications (MySQL, Vertica, Talend, Kafka, Elasticsearch, Spark).</li>
       <li>Main developer of a SaltStack application for detection and remediation of on-premise software malfunctions.</li>
-      <li>Tutored two new employees on Springboot and React</li>
+      <li>Tutored two new employees on Spring Boot and React</li>
     </ExperienceLayout>
   </React.Fragment>
 
@@ -88,7 +88,7 @@ const Education = () =>
       title={<>Postdoctoral Researcher at Politecnico di Milano</>}
       period={<>Nov. 2024 - <i>Present</i></>}
     >
-      <li>Lead developer of a high-performance finite element C++ library for the European Project ERC SyG NEMESIS.</li>
+      <li>Lead developer of a high-performance finite element C++ library for the <ColorLink variant="small" to="https://erc-nemesis.eu/">European Project ERC SyG NEMESIS</ColorLink>.</li>
       <li>Developed graph neural networks-based graph partitioner, reducing computational cost </li>
     </ExperienceLayout>
     <br />
@@ -96,7 +96,7 @@ const Education = () =>
       title={<>Visiting PhD student at <ColorLink variant="small" to={URL_EPFL}>École Polytechnique Fédérale de Lausanne (EPFL)</ColorLink></>}
       period="March 2024 - June 2024"
     >
-      <li>Researched deep learning based reduced order models under supervision of prof. <ColorLink variant="small" to={URL_JAN}>Jan S. Hesthaven</ColorLink></li>
+      <li>Researched deep learning based reduced order models under the supervision of <ColorLink variant="small" to={URL_JAN}>Prof. Jan S. Hesthaven</ColorLink></li>
     </ExperienceLayout>
     <br />
     <ExperienceLayout
@@ -105,8 +105,8 @@ const Education = () =>
     >
       <li>Researched scientific machine learning under the supervision of <ColorLink variant="small" to={URL_PAOLA}>Prof. Paola F. Antonietti</ColorLink> and <ColorLink variant="small" to={URL_LUCA}>Prof. Luca Dede'</ColorLink>.</li>
       <li>Teaching assistant for more than 120 hours, including Master's courses on advanced programming and machine learning (<u>code publicly available</u>). (<ColorLink variant="small" to="/cv/#Teaching">see below</ColorLink>)</li>
-      <li>Invited spearker to several talks at congress and scientific events. (<ColorLink variant="small" to="/cv/#Organized">see below</ColorLink>)</li>
-      <li>Thesis and project supervisor for Masters' students</li>
+      <li>Invited speaker to several talks at congress and scientific events. (<ColorLink variant="small" to="/cv/#Organized">see below</ColorLink>)</li>
+      <li>Thesis and project supervisor for Master's students</li>
     </ExperienceLayout>
     <br />
     <ExperienceLayout
@@ -126,7 +126,7 @@ const Education = () =>
     >
       <li>Captain for two years of the mathematical olympiad team, reached national level in 2011, <ColorLink variant="small" to={URL_OLI_MATE_2012}>2012</ColorLink>, <ColorLink variant="small" to={URL_OLI_MATE_2014}>2014</ColorLink></li>
       <li>Reached national level at physics olympiad in 2014 (<ColorLink variant="small" to={URL_OLI_FIS}>link</ColorLink>) </li>
-      <li>Worked in team to study the orbit of a double star, project reached national contest "<ColorLink variant="small" to={URL_ADS9378_PDF}>I giovani e le scienze - FAST</ColorLink>" in 2014</li>
+      <li>Worked in a team to study the orbit of a double star, the project reached the national contest "<ColorLink variant="small" to={URL_ADS9378_PDF}>I giovani e le scienze - FAST</ColorLink>" in 2014</li>
     </ExperienceLayout>
   </React.Fragment>
 
